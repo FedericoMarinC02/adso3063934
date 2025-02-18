@@ -1,0 +1,111 @@
+body {
+    background-color: #666;
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    justify-content: center;
+    min-height: 100dvh;
+}
+
+main {
+    background-color: #ccc;
+    border-radius: 2rem;
+    padding: 1rem;
+    width: 380px;
+
+    header {
+        border-radius: 1rem;
+
+        h1 {
+            text-align: center;
+            border-bottom: 1px solid #444;
+            margin: 0;
+        }
+
+        section.info {
+            display: flex;
+            justify-content: space-between;
+
+            div {
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+
+                span {
+                    align-items: center;
+                    border-radius: 50px;
+                    background-color: #444;
+                    color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    height: 20px;
+                    width: 20px;
+                }
+            }
+        }
+    }
+
+    section.list {
+        article {
+            border-radius: 0.80rem;
+            background-color: rgb(143, 146, 146);
+            margin-bottom: 0.4rem;
+            display: flex;
+            justify-content: space-between;
+            padding-inline: 4rem;
+            align-items: center;
+
+            &.checked {
+                background-color: #ff03 !important;
+
+                p {
+                    text-decoration: line-through;
+                }
+            }
+
+            input {
+                accent-color: rgb(132, 22, 140);
+                zoom: 1.4;
+            }
+        }
+
+        article:nth-child(even) {
+            background-color: #eee;
+        }
+
+        button {
+            background-color: crimson;
+            border-radius: 50%;
+            border: none;
+            color: white;
+            cursor: pointer;
+            height: 20px;
+            width: 20px;
+            transition: trasnsform 0.2s ease-in;
+
+            &:hover {
+                transform: scale(1.4);
+            }
+        }
+    }
+
+    footer {
+        display: flex;
+        input {
+            border: 1px solid #444;
+            border-radius: 0.4rem 0 0 0.4rem;
+            border-right: green;
+            width: 320px;
+            outline: none;
+            padding: 0.8rem;
+        }
+        button {
+            background-color: rgb(86, 182, 86);
+            border-radius: 0 0.4rem 0.4rem 0;
+            color: white;
+            border: 1px;
+            width: 50px;
+            cursor: pointer;
+        }
+    }
+}

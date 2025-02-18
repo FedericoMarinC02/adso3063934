@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/master.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Todo List</h1>
+            <section class="info">
+                <div class="tasks">
+                    <span class="num-tasks">2</span>
+                    <p class="title-tasks">tasks</p>
+                </div>
+                <div class="remains">
+                    <span class="num-remains">1</span>
+                    <p class="title-reamins">remains</p>
+                </div>
+            </section>
+        </header>
+        <section class="list">
+            <article>
+                <input type="checkbox" checked>
+                <p>Learn Emmet</p>
+                <button>&times;</button>
+            </article>
+            <article class="checked">
+                <input type="checkbox" >
+                <p>Learn Japanese</p>
+                <button>&times;</button>
+            </article>
+        </section>
+        <footer>
+            <input type="text" id="input-task" placeholder="Add tasks" maxlength="38">
+            <button id="add">+</button>
+        </footer>
+    </main>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/app.js"></script>
+    
+</body>
+</html>
