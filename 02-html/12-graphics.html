@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../master.css">
+</head>
+<body>
+    <style>
+        section canvas,
+
+        section svg {
+            display: flex;
+            margin-inline: auto;
+            margin-block: 2rem;
+        }
+    </style>
+    
+<body class="html">
+    <nav class="nav">
+        <a href="./index.html"></a>
+    </nav>
+    <main>
+        <header class="header">
+            <h2>12 - Graphics</h2>
+            <p>Creates inline graphics with tags.</p>
+        </header>
+        <section class="section">
+            <h3>Canvas:</h3>
+            <canvas id="circle"></canvas>
+            <h3>SVG</h3>
+
+        </section>
+    </main>
+    <script>
+        const canvas = document.getElementById('circle')
+        const context = canvas.getContext('2d')
+        context.fillStyle = "#e04c25"
+        context.beginPath()
+        context.arc(150, 60, 60, 0, Math.PI * 2, true)
+        context.closePath()
+        context.fill() 
+    </script>
+</body>
+</html>

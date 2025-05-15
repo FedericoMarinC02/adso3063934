@@ -56,9 +56,9 @@ nav.nav {
     left: 20px;
 
     a:is(:link, :visited) {
-        border: 2px solid black;
+        border: 2px solid rgb(0, 0, 0);
         border-radius: 50%;
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(103, 100, 100);
         height: 50px;
         display: flex;
         align-items: center;
@@ -67,9 +67,9 @@ nav.nav {
         width: 50px;
 
         svg {
-            width: 40px;
+            width: 30px;
             transition: all 0.1s 0.1s ease-in;
-            fill: #7ACB16;
+            fill: #000000;
         }
 
         &:hover {
@@ -241,5 +241,138 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
         }
 
+    }
+}
+
+body.jquery {
+  background-color: #0868AC;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%2313629a' points='800 100 0 200 0 800 1600 800 1600 200'/%3E%3Cpolygon fill='%231d5c89' points='800 200 0 400 0 800 1600 800 1600 400'/%3E%3Cpolygon fill='%23265679' points='800 300 0 600 0 800 1600 800 1600 600'/%3E%3Cpolygon fill='%232e5169' points='1600 800 800 400 0 800'/%3E%3Cpolygon fill='%23354b5b' points='1280 800 800 500 320 800'/%3E%3Cpolygon fill='%233c464d' points='533.3 800 1066.7 800 800 600'/%3E%3Cpolygon fill='%23414141' points='684.1 800 914.3 800 800 700'/%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+    menu {
+        a:is(:link, :visited) {
+            color: #000000;
+
+            span {
+                background-color: #000000;
+                border: 2px solid rgb(6, 39, 204);
+            }
+
+
+        }
+
+    }
+}
+
+main.todolist {
+    background-color: #ccc;
+    border-radius: 2rem;
+    padding: 1rem;
+    width: 380px;
+
+    header {
+        border-radius: 1rem;
+
+        h1 {
+            text-align: center;
+            border-bottom: 1px solid #444;
+            margin: 0;
+        }
+
+        section.info {
+            display: flex;
+            justify-content: space-between;
+
+            div {
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+
+                span {
+                    align-items: center;
+                    border-radius: 50px;
+                    background-color: #444;
+                    color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    height: 20px;
+                    width: 20px;
+                }
+            }
+        }
+    }
+
+    section.list {
+        article {
+            border-radius: 0.80rem;
+            background-color: rgb(143, 146, 146);
+            margin-bottom: 0.4rem;
+            display: flex;
+            justify-content: space-between;
+            padding-inline: 4rem;
+            align-items: center;
+
+            &.checked {
+                background-color: #ff03 !important;
+
+                p {
+                    text-decoration: line-through;
+                }
+            }
+
+            input {
+                accent-color: rgb(132, 22, 140);
+                zoom: 1.4;
+            }
+        }
+
+        article:nth-child(even) {
+            background-color: #eee;
+        }
+
+        button {
+            background-color: crimson;
+            border-radius: 50%;
+            border: none;
+            color: white;
+            cursor: pointer;
+            height: 20px;
+            width: 20px;
+            transition: trasnsform 0.2s ease-in;
+
+            &:hover {
+                transform: scale(1.4);
+            }
+        }
+    }
+
+    #delete-all {
+        background-color: rgb(255, 1, 51);
+        border-radius: 10px;
+        border: 1px solid;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        }
+    }
+
+footer {
+    display: flex;
+
+    input {
+        border: 1px solid #444;
+        border-radius: 0.4rem 0 0 0.4rem;
+        border-right: green;
+        width: 320px;
+        outline: none;
+        padding: 0.8rem;
+    }
+
+    button {
+        background-color: rgb(86, 182, 86);
+        border-radius: 0 0.4rem 0.4rem 0;
+        color: white;
+        border: 1px;
+        width: 50px;
+        cursor: pointer;
     }
 }
