@@ -44,7 +44,20 @@
                 }
             }
         }
-        }
+        button.btn-reset {
+            cursor: pointer;
+            display: flex;
+            border: none;
+            border-radius: 0.4rem;
+            margin: 0 auto;
+            padding: 0.5rem 1.2rem;
+            transition: transform 0.4s ease-in;
+            &:hover {
+                transform: scale(1.1);
+            }
+            }
+    
+        
     </style>
 </head>
 
@@ -82,12 +95,50 @@
 
                 </button>
             </div>
+            <button class="btn-reset">Reset</button>
         </section>
     </main>
     <script src="js/jquery-3.7.1.min.js"></script>
     <script>
+
+        //Selectores
+
         $(document).ready(function () {
-            $('.ready').text('👌 DOM Loaded!')
+            $count = 0;
+
+           $('.btn-subs').click(function () {
+               event.preventDefault();
+               $('output').text($count-=1);
+            });
+            $('.btn-add').click(function () {
+                event.preventDefault();
+                 $('output').text($count+=1);
+            });
+            
+             $('.btn-subs').dblclick(function () {
+                event.preventDefault();
+                $('output').text($count-=10);
+            });
+            $('.btn-add').dblclick(function () {
+                event.preventDefault();
+                $('output').text($count+=10);
+            });
+
+          //  $('.btn-reset').click(function(event) {
+          //      event.preventDefault()
+          //      $('output').text('0');
+          //  })
+
+            $('.btn-reset').click(function(event) {
+                event.preventDefault()
+                $interval = setInterval(()=> {
+                    if($count != 0) {
+                   ($count>0) ?  $('output').text(--$count) : $('output').text(++$count)
+                } else {
+                    clearInterval($interval)
+                }
+                }, 250)
+            })
         });
     </script>
 </body>
