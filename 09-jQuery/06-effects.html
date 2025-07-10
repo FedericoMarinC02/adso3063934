@@ -1,16 +1,41 @@
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>06 - Effects</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
- 
+
     <link rel="stylesheet" href="../master.css">
+
+    <style>
+        section.section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 450px !important;
+            gap: 1rem;
+
+            select.fx {
+                border: none;
+                border-radius: 0.4rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            img.character {
+                filter: drop-shadow(0 0 24px #eca3a3)
+            }
+        }
+    </style>
 </head>
+
 <body class="jquery">
     <nav class="nav">
         <a href="index.html">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                    d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+            </svg>
         </a>
     </nav>
     <main>
@@ -19,8 +44,104 @@
             <h2>Add animations and effects to elements.</h2>
         </header>
         <section class="section">
+            <select class="fx">
+                <option value="">Select JQuery Effect...</option>
+                <option value="1">Hide</option>
+                <option value="2" disabled>Show</option>
+                <option value="3">Toggle</option>
+                <option value="4" disabled>Slide Down</option>
+                <option value="5">Slide up</option>
+                <option value="6">Slide Toggle</option>
+                <option value="7" disabled>Fade In</option>
+                <option value="8">Fade Out</option>
+                <option value="9" disabled>Fade To</option>
+                <option value="10">Fade Toggle</option>
+                <option value="11">Animate</option>
+                <option value="12">Stop</option>
+            </select>
+
+            <img class="character" src="../images/99724c7c1f89945f11a57f854da22b21.png" alt="Majin Buu">
         </section>
     </main>
     <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.fx').change(function () {
+                //alert($(this).val())
+                switch ($(this).val()) {
+                    case '1':
+                        $('.character').hide()
+                        toggleDisableds()
+                        break;
+
+                    case '2':
+                        $('.character').show()
+                        toggleDisableds()
+                        break;
+
+                    case '3':
+                        $('.character').toggle()
+                        toggleDisableds()
+                        break;
+
+                    case '4':
+                        $('.character').slideDown(3000)
+                        toggleDisableds()
+                        break;
+
+                    case '5':
+                        $('.character').slideUp(3000)
+                        toggleDisableds()
+                        break;
+
+                    case '6':
+                        $('.character').slideToggle()
+                        toggleDisableds()
+                        break;
+
+                    case '7':
+                        $('.character').fadeIn(3000)
+                        toggleDisableds()
+                        break;
+
+                    case '8':
+                        $('.character').fadeOut(3000)
+                        toggleDisableds()
+                        break;
+
+                    case '9':
+                        $('.character').fadeTo(3000, 0.3)
+                        toggleDisableds()
+                        break;
+
+                    case '10':
+                        $('.character').fadeToggle(3000)
+                        toggleDisableds()
+                        break;
+
+                    case '11':
+                        $('.character').animate({ width: '120px' }, 3000)
+                            .animate({ width: '366px' }, 3000)
+                        break;
+
+                    case '12':
+                        $('.character').stop()
+                        break;
+                }
+
+            })
+
+            function toggleDisableds() {
+                $('option').each(function () {
+                    if (($(this).text() != 'Toggle') &&
+                        ($(this).text() != 'Slide toggle') &&
+                        ($(this).text() != 'Fade Toggle')) {
+                        $(this).prop('disabled', !$(this).prop('disabled'))
+                    }
+                })
+            }
+        });          
+    </script>
 </body>
+
 </html>

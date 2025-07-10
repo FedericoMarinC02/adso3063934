@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23 - PokeDex</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/master.css">
+    <style>
+        body.jquery {
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #3b4cca 0%, #ffcb05 100%) fixed;
+            background-size: cover;
+            font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            padding: 1.2rem 2rem 0.5rem 2rem;
+        }
+
+        .nav a {
+            display: flex;
+            align-items: center;
+            background: #fffbe7;
+            border: 2px solid #2a75bb;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(44, 62, 80, 0.10);
+            transition: background 0.2s, transform 0.2s;
+            text-decoration: none;
+        }
+
+        .nav a:hover {
+            background: #ffcb05;
+            transform: scale(1.08);
+        }
+
+        .nav svg {
+            width: 28px;
+            height: 28px;
+            fill: #3b4cca;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .header h1 {
+            font-family: 'Press Start 2P', 'Pokemon Solid', 'Arial', sans-serif;
+            color: #ffcb05;
+            text-shadow: 2px 2px 0 #2a75bb, 4px 4px 0 #3b4cca;
+            font-size: 2.1rem;
+            margin: 0.5rem 0 0.2rem 0;
+            letter-spacing: 2px;
+        }
+
+        .header h2 {
+            font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif;
+            color: #fffbe7;
+            font-size: 1.1rem;
+            margin: 0 0 1.2rem 0;
+            text-shadow: 1px 1px 0 #2a75bb;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+        }
+
+        .container {
+            margin-bottom: 1.2rem;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        @media (max-width: 900px) {
+            .cards {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.2rem;
+            }
+
+            .header h1 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="jquery">
+    <nav class="nav">
+        <a href="index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                    d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+            </svg>
+        </a>
+    </nav>
+    <main>
+        <header class="header">
+            <h1>23 - PokéDex</h1>
+            <h2>Learn about Pokemón using a Pokedex connected to an API</h2>
+        </header>
+        <section class="section">
+            <div class="container">
+                <h1 class="pokedex-title">Buscador de Pokemón</h1>
+            </div>
+            <div class="cards">
+                <div class="card two pokedex-container">
+                    <form class="pokedex-search" onsubmit="buscarPokemon(1); return false;">
+                        <input type="text" id="pokemonInput1" placeholder="Nombre o Numero de pokemon">
+                        <button type="submit">Buscar Pokemón</button>
+                    </form>
+                    <div id="pokemoninfo1" class="pokemon-info"></div>
+                </div>
+
+                <div class="card three pokedex-container">
+                    <form class="pokedex-search" onsubmit="buscarPokemon(2); return false;">
+                        <input type="text" id="pokemonInput2" placeholder="Nombre o Numero de pokemon">
+                        <button type="submit">Buscar Pokemón</button>
+                    </form>
+                    <div id="pokemoninfo2" class="pokemon-info"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

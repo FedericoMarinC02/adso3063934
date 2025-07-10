@@ -1,0 +1,90 @@
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08 - Chaining</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../master.css">
+
+    <style>
+        button.btn {
+            display: flex;
+            cursor: pointer;
+            background-color: #fff9;
+            border: none;
+            margin: 1rem auto;
+            padding: 0.8rem 1.2rem;
+            border-radius: 0.6rem 1.2rem;
+            transition: transform 0.2s ease-in;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        img {
+            transform: scale(1.6);
+            transition: all 0.4s ease-in;
+        }
+
+        article.landscape {
+            background: url(https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2025/01/elden-ring-4283038.jpg?tf=1200x1200) no-repeat center center;
+            border-radius: 0.4rem;
+            border: 2px solid #dda764;
+            height: 350px;
+            margin: 2rem auto;
+            overflow: hidden;
+            position: relative;
+            width: 350px;
+        }
+
+        img.character {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            transition: all 0.2s ease-in;
+            width: 50px;
+            transform: rotateY(-180deg);
+        }
+    </style>
+</head>
+
+<body class="jquery">
+    <nav class="nav">
+        <a href="index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                    d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+            </svg>
+        </a>
+    </nav>
+    <main>
+        <header class="header">
+            <h1>08 - Chaining</h1>
+            <h2>Chain multiple jQuery methods for concise code.</h2>
+        </header>
+        <section class="section">
+            <button class="btn">Animate</button>
+            <article class="landscape">
+                <img class="character" src="../images/22.gif" alt="">
+            </article>
+        </section>
+    </main>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.btn').click(function () {
+                $('.character').animate({ 'left': '300px'})
+                               .animate({ 'top': '250px' })
+                               .animate({ 'left': '0px' })
+                               .animate({ 'top': '0px' })
+
+            })
+        })
+
+    </script>
+</body>
+
+</html>

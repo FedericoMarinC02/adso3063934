@@ -1,122 +1,135 @@
-body {
-    background-color: #4B0B6D;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='402' height='402' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5' stroke-opacity='0.91'%3E%3Crect x='-40' y='40' width='75' height='75'/%3E%3Crect x='-35' y='45' width='65' height='65'/%3E%3Crect x='-30' y='50' width='55' height='55'/%3E%3Crect x='-25' y='55' width='45' height='45'/%3E%3Crect x='-20' y='60' width='35' height='35'/%3E%3Crect x='-15' y='65' width='25' height='25'/%3E%3Crect x='-10' y='70' width='15' height='15'/%3E%3Crect x='-5' y='75' width='5' height='5'/%3E%3Crect width='35' height='35'/%3E%3Crect x='5' y='5' width='25' height='25'/%3E%3Crect x='10' y='10' width='15' height='15'/%3E%3Crect x='15' y='15' width='5' height='5'/%3E%3Crect x='40' width='75' height='75'/%3E%3Crect x='45' y='5' width='65' height='65'/%3E%3Crect x='50' y='10' width='55' height='55'/%3E%3Crect x='55' y='15' width='45' height='45'/%3E%3Crect x='60' y='20' width='35' height='35'/%3E%3Crect x='65' y='25' width='25' height='25'/%3E%3Crect x='70' y='30' width='15' height='15'/%3E%3Crect x='75' y='35' width='5' height='5'/%3E%3Crect x='40' y='80' width='35' height='35'/%3E%3Crect x='45' y='85' width='25' height='25'/%3E%3Crect x='50' y='90' width='15' height='15'/%3E%3Crect x='55' y='95' width='5' height='5'/%3E%3Crect x='120' y='-40' width='75' height='75'/%3E%3Crect x='125' y='-35' width='65' height='65'/%3E%3Crect x='130' y='-30' width='55' height='55'/%3E%3Crect x='135' y='-25' width='45' height='45'/%3E%3Crect x='140' y='-20' width='35' height='35'/%3E%3Crect x='145' y='-15' width='25' height='25'/%3E%3Crect x='150' y='-10' width='15' height='15'/%3E%3Crect x='155' y='-5' width='5' height='5'/%3E%3Crect x='120' y='40' width='35' height='35'/%3E%3Crect x='125' y='45' width='25' height='25'/%3E%3Crect x='130' y='50' width='15' height='15'/%3E%3Crect x='135' y='55' width='5' height='5'/%3E%3Crect y='120' width='75' height='75'/%3E%3Crect x='5' y='125' width='65' height='65'/%3E%3Crect x='10' y='130' width='55' height='55'/%3E%3Crect x='15' y='135' width='45' height='45'/%3E%3Crect x='20' y='140' width='35' height='35'/%3E%3Crect x='25' y='145' width='25' height='25'/%3E%3Crect x='30' y='150' width='15' height='15'/%3E%3Crect x='35' y='155' width='5' height='5'/%3E%3Crect x='200' y='120' width='75' height='75'/%3E%3Crect x='40' y='200' width='75' height='75'/%3E%3Crect x='80' y='80' width='75' height='75'/%3E%3Crect x='85' y='85' width='65' height='65'/%3E%3Crect x='90' y='90' width='55' height='55'/%3E%3Crect x='95' y='95' width='45' height='45'/%3E%3Crect x='100' y='100' width='35' height='35'/%3E%3Crect x='105' y='105' width='25' height='25'/%3E%3Crect x='110' y='110' width='15' height='15'/%3E%3Crect x='115' y='115' width='5' height='5'/%3E%3Crect x='80' y='160' width='35' height='35'/%3E%3Crect x='85' y='165' width='25' height='25'/%3E%3Crect x='90' y='170' width='15' height='15'/%3E%3Crect x='95' y='175' width='5' height='5'/%3E%3Crect x='120' y='160' width='75' height='75'/%3E%3Crect x='125' y='165' width='65' height='65'/%3E%3Crect x='130' y='170' width='55' height='55'/%3E%3Crect x='135' y='175' width='45' height='45'/%3E%3Crect x='140' y='180' width='35' height='35'/%3E%3Crect x='145' y='185' width='25' height='25'/%3E%3Crect x='150' y='190' width='15' height='15'/%3E%3Crect x='155' y='195' width='5' height='5'/%3E%3Crect x='160' y='40' width='75' height='75'/%3E%3Crect x='165' y='45' width='65' height='65'/%3E%3Crect x='170' y='50' width='55' height='55'/%3E%3Crect x='175' y='55' width='45' height='45'/%3E%3Crect x='180' y='60' width='35' height='35'/%3E%3Crect x='185' y='65' width='25' height='25'/%3E%3Crect x='190' y='70' width='15' height='15'/%3E%3Crect x='195' y='75' width='5' height='5'/%3E%3Crect x='160' y='120' width='35' height='35'/%3E%3Crect x='165' y='125' width='25' height='25'/%3E%3Crect x='170' y='130' width='15' height='15'/%3E%3Crect x='175' y='135' width='5' height='5'/%3E%3Crect x='200' y='200' width='35' height='35'/%3E%3Crect x='200' width='35' height='35'/%3E%3Crect y='200' width='35' height='35'/%3E%3C/g%3E%3C/svg%3E");
-    display: flex;
-    align-items: center;
-    font-family: sans-serif;
-    justify-content: center;
-    min-height: 100dvh;
+/* Importa fuente estilo Pokémon (Press Start 2P como alternativa web segura) */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Estilos temáticos para la Pokédex */
+.pokedex-container {
+  background: linear-gradient(135deg, #ffcb05 60%, #3b4cca 100%);
+  border: 5px solid #2a75bb;
+  border-radius: 2.5rem;
+  box-shadow: 0 8px 32px 0 rgba(44, 62, 80, 0.25);
+  padding: 2.5rem 2rem 2rem 2rem;
+  margin: 2rem auto;
+  max-width: 36rem;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
 }
 
-main {
-    background-color: #ccc;
-    border-radius: 2rem;
-    padding: 1rem;
-    width: 380px;
-
-    header {
-        border-radius: 1rem;
-
-        h1 {
-            text-align: center;
-            border-bottom: 1px solid #444;
-            margin: 0;
-        }
-
-        section.info {
-            display: flex;
-            justify-content: space-between;
-
-            div {
-                display: flex;
-                align-items: center;
-                gap: .5rem;
-
-                span {
-                    align-items: center;
-                    border-radius: 50px;
-                    background-color: #444;
-                    color: #fff;
-                    display: flex;
-                    justify-content: center;
-                    height: 20px;
-                    width: 20px;
-                }
-            }
-        }
-    }
-
-    section.list {
-        article {
-            border-radius: 0.80rem;
-            background-color: rgb(143, 146, 146);
-            margin-bottom: 0.4rem;
-            display: flex;
-            justify-content: space-between;
-            padding-inline: 4rem;
-            align-items: center;
-
-            &.checked {
-                background-color: #ff03 !important;
-
-                p {
-                    text-decoration: line-through;
-                }
-            }
-
-            input {
-                accent-color: rgb(132, 22, 140);
-                zoom: 1.4;
-            }
-        }
-
-        article:nth-child(even) {
-            background-color: #eee;
-        }
-
-        button {
-            background-color: crimson;
-            border-radius: 50%;
-            border: none;
-            color: white;
-            cursor: pointer;
-            height: 20px;
-            width: 20px;
-            transition: trasnsform 0.2s ease-in;
-
-            &:hover {
-                transform: scale(1.4);
-            }
-        }
-    }
-
-    #delete-all {
-        background-color: rgb(255, 1, 51);
-        border-radius: 10px;
-        border: 1px solid;
-        color: rgb(0, 0, 0);
-        cursor: pointer;
-        }
-    }
-
-footer {
-    display: flex;
-
-    input {
-        border: 1px solid #444;
-        border-radius: 0.4rem 0 0 0.4rem;
-        border-right: green;
-        width: 320px;
-        outline: none;
-        padding: 0.8rem;
-    }
-
-    button {
-        background-color: rgb(86, 182, 86);
-        border-radius: 0 0.4rem 0.4rem 0;
-        color: white;
-        border: 1px;
-        width: 50px;
-        cursor: pointer;
-    }
+.pokedex-title, .pokedex-header h1, .pokedex-header h2 {
+  font-family: 'Press Start 2P', 'Pokemon Solid', 'Arial', sans-serif !important;
+  color: #ffcb05;
+  text-shadow: 2px 2px 0 #2a75bb, 4px 4px 0 #3b4cca;
+  margin-bottom: 1.2rem;
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 1.3rem;
+  word-break: break-word;
 }
+
+.pokedex-search {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.pokedex-search input[type="text"] {
+  font-family: 'Press Start 2P', 'Pokemon Solid', 'Arial', sans-serif;
+  border: 2px solid #3b4cca;
+  background: #fffbe7;
+  color: #2a75bb;
+  font-size: 1rem;
+  border-radius: 8px 0 0 8px;
+  padding: 0.7rem 1rem;
+  outline: none;
+  width: 70%;
+  min-width: 120px;
+  max-width: 300px;
+  transition: border 0.2s;
+  box-sizing: border-box;
+}
+.pokedex-search input[type="text"]:focus {
+  border: 2px solid #ffcb05;
+}
+
+.pokedex-search button {
+  font-family: 'Press Start 2P', 'Pokemon Solid', 'Arial', sans-serif;
+  background: linear-gradient(90deg, #3b4cca 60%, #ffcb05 100%);
+  color: #fff;
+  border: 2px solid #2a75bb;
+  border-radius: 0 8px 8px 0;
+  font-size: 1rem;
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.pokedex-search button:hover {
+  background: linear-gradient(90deg, #ffcb05 60%, #3b4cca 100%);
+  color: #2a75bb;
+  transform: scale(1.05);
+}
+
+.pokemon-info {
+  background: #fffbe7;
+  border: 2px solid #3b4cca;
+  color: #2a75bb;
+  font-size: 1.1rem;
+  font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.10);
+  margin-top: 1.5rem;
+  padding: 1.2rem 1.5rem;
+  width: 100%;
+  max-width: 30rem;
+  text-align: left;
+  overflow-x: auto;
+  word-break: break-word;
+}
+
+.pokemon-info img {
+  display: block;
+  margin: 0 auto 1rem auto;
+  max-width: 120px;
+  max-height: 120px;
+  border-radius: 1rem;
+  background: #ffcb05;
+  border: 2px solid #2a75bb;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.10);
+}
+
+.pokemon-info h3, .pokemon-info h4 {
+  font-family: 'Press Start 2P', 'Pokemon Solid', 'Arial', sans-serif;
+  color: #3b4cca;
+  margin: 0.5rem 0 0.5rem 0;
+  font-size: 1rem;
+  text-shadow: 1px 1px 0 #ffcb05;
+}
+
+.pokemon-info ul, .pokemon-info ol {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.pokemon-info li {
+  margin-bottom: 0.3rem;
+}
+
+@media (max-width: 600px) {
+  .pokedex-container {
+    padding: 1rem 0.2rem;
+    max-width: 98vw;
+  }
+  .pokemon-info {
+    padding: 0.7rem 0.3rem;
+    max-width: 98vw;
+    font-size: 0.95rem;
+  }
+  .pokedex-title, .pokedex-header h1, .pokedex-header h2 {
+    font-size: 0.9rem;
+  }
+}
+
+/* Puedes aplicar las clases .pokedex-container, .pokedex-title, .pokedex-search, .pokemon-info en tu HTML para obtener el estilo temático. */
