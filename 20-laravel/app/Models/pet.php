@@ -2,18 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class pet extends Model
+class Pet extends Model
 {
     use HasFactory;
-
-     /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
     protected $fillable = [
         'name',
         'image',
@@ -24,6 +18,12 @@ class pet extends Model
         'location',
         'description',
         'active',
-        'status',
+        'status'
     ];
+
+    //Relationships:
+    // Pet hasOne adoption
+    public function adoption(){
+        return $this->hasOne(Adoption::class);
+    }
 }
