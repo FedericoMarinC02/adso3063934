@@ -1,57 +1,3 @@
-{{-- <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
-
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
-
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout> --}}
-
-
 @extends('layouts.home')
 
 @section('title', 'Register: Larapets 🐶')
@@ -75,14 +21,14 @@
                             <label class="label">Document</label>
                             <input type="text" class="input bg-[#0006] w-full mt-1 outline-0" name="document" placeholder="753921345" value="{{ old('document') }}"/>
                             @error('document')
-                            <small class="badge badge-outline badge-error w-full mt-1 text-xs py-4">{{ $message }}</small>
+                            <small class="badge badge-error w-full mt-1 py-4">{{ $message }}</small>
                             @enderror
                             
                             {{-- FullName --}}
                             <label class="label">FullName</label>
                             <input type="text" class="input bg-[#0006] w-full mt-1 outline-0" name="fullname" placeholder="John Doe" value="{{ old('fullname') }}"/>
                             @error('fullname')
-                            <small class="badge badge-outline badge-error w-full mt-1 text-xs py-4">{{ $message }}</small>
+                            <small class="badge badge-error w-full mt-1 py-4">{{ $message }}</small>
                             @enderror
                             
                             {{-- Gender --}}
@@ -93,14 +39,14 @@
                                 <option value="female" @if(old('gender') == 'female') selected @endif>Female</option>
                             </select>
                             @error('gender')
-                            <small class="badge badge-outline badge-error w-full mt-1 text-xs py-4">{{ $message }}</small>
+                            <small class="badge badge-error w-full mt-1 py-4">{{ $message }}</small>
                             @enderror
 
                             {{-- Birthdate --}}
                             <label class="label">Birthdate</label>
                             <input type="date" class="input bg-[#0006] w-full mt-1 outline-0" name="birthdate" placeholder="1999-10-29" value="{{ old('birthdate') }}"/>
                             @error('birthdate')
-                            <small class="badge badge-outline badge-error w-full mt-1 text-xs py-4">{{ $message }}</small>
+                            <small class="badge badge-error w-full mt-1 py-4">{{ $message }}</small>
                             @enderror
                         </div>
 
@@ -109,21 +55,21 @@
                             <label class="label">Phone</label>
                             <input type="text" class="input bg-[#0006] w-full mt-1 outline-0" name="phone" placeholder="123-456-7890" value="{{ old('phone') }}"/>
                             @error('phone')
-                            <small class="badge badge-outline badge-error w-full mt-1 text-xs py-4">{{ $message }}</small>
+                            <small class="badge badge-error w-full mt-1 py-4">{{ $message }}</small>
                             @enderror
 
                             {{-- Email --}}
                             <label class="label">Email</label>
                             <input type="text" name="email" class="input bg-[#0006] w-full outline-0" required placeholder="Email" value="{{ old('email') }}" />
                             @error('email')
-                                <small class="badge badge-error w-full mt-1 py-3">{{ $message }}</small>
+                                <small class="badge badge-error w-full mt-1 py-4">{{ $message }}</small>
                             @enderror
 
                             {{-- Password --}}
                             <label class="label">Password</label>
                             <input type="password" class="input bg-[#0006] w-full outline-0" name="password" placeholder="Password" />
                             @error('password')
-                                <small class="badge badge-error w-full mt-1 py-3">{{ $message }}</small>
+                                <small class="badge badge-error w-full mt-1 py-4">{{ $message }}</small>
                             @enderror
 
                             {{-- Confirm Password --}}

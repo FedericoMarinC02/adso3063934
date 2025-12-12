@@ -14,11 +14,11 @@ class AdoptionSeeder extends Seeder
      */
     public function run(): void
     {
-        $adop = new Adoption;
+        $adop = new Adoption();
         $adop->user_id = 2;
-        $adop->pet_id = 4;
-        if($adop ->save()){
-            $pet = Pet::find(4);
+        $adop->pet_id  = 1;
+        if($adop->save()) {
+            $pet = Pet::find(1);
             $pet->status = 1;
             $pet->save();
         };

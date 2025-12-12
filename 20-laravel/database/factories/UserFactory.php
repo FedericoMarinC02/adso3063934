@@ -5,7 +5,6 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\File;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
@@ -24,66 +23,27 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
-        // Definimos el género primero
-        $gender = fake()->randomElement(['Female', 'Male']);
-        
-        // Generamos nombres según el género
-        if ($gender === 'Female') {
-            $fullname = fake()->firstNameFemale() . " " . fake()->lastName();
-        } else {
-            $fullname = fake()->firstNameMale() . " " . fake()->lastName();
-        }
-        
-        // Generamos el nombre de la imagen
-        $photoFilename = $this->downloadUserImage($gender);
+
+        $gender = fake()->randomElement(array('Female', 'Male'));
+        $name = ($gender == 'Female') ? $name = fake()->firstNameFemale() : $name = fake()->firstNameMale();
+        ($gender == 'Female') ? $g = 'women' : $g = 'men';
+        $id = fake()->numerify(('75######'));
+        $rnd = fake()->numberBetween(1,99);
+        copy('https://randomuser.me/api/portraits/'.$g.'/'.$rnd.'.jpg', public_path('images/'.$id.'.png'));
+        $email = strtolower($name).fake()->numerify('###').'@mail.com';
 
         return [
-            'document' => fake()->numerify('75######'),
-            'fullname' => $fullname,
-            'gender' => $gender,
-            'birthdate' => fake()->date(),
-            'phone' => fake()->numerify('310######'),
-            'email' => fake()->unique()->safeEmail(),
+            'document'          => $id,
+            'fullname'          => $name . " " . fake()->lastName(),
+            'gender'            => $gender,
+            'birthdate'         => fake()->dateTimeBetween('1977-01-01', '2007-12-31'),
+            'photo'             => $id.'.png',
+            'email'             => $email,
+            'phone'             => fake()->numerify('310#######'),
             'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
-            'remember_token' => Str::random(10),
-            'photo' => $photoFilename,
+            'password'          => static::$password ??= Hash::make('12345'),
+            'remember_token'    => Str::random(10),
         ];
-    }
-
-    /**
-     * Descarga imagen desde randomuser.me según el género
-     *
-     * @param string $gender
-     * @return string
-     */
-    private function downloadUserImage(string $gender): string
-    {
-        $genderPath = strtolower($gender) === 'female' ? 'women' : 'men';
-        $randomNumber = rand(1, 99);
-        $filename = uniqid() . '_' . strtolower($gender) . '.jpg';
-        $filepath = public_path('images/' . $filename);
-        
-        try {
-            // Crear directorio si no existe
-            if (!File::exists(public_path('images'))) {
-                File::makeDirectory(public_path('images'), 0755, true);
-            }
-            
-            // URL directa de randomuser.me
-            $imageUrl = "https://randomuser.me/api/portraits/{$genderPath}/{$randomNumber}.jpg";
-            
-            // Usar copy() para descargar
-            if (copy($imageUrl, $filepath)) {
-                return $filename;
-            }
-            
-        } catch (\Exception $e) {
-            // En caso de error, imagen por defecto
-            return 'default_' . strtolower($gender) . '.jpg';
-        }
-        
-        return 'default_' . strtolower($gender) . '.jpg';
     }
 
     /**
@@ -91,7 +51,7 @@ class UserFactory extends Factory
      */
     public function unverified(): static
     {
-        return $this->state(fn (array $attributes) => [
+        return $this->state(fn(array $attributes) => [
             'email_verified_at' => null,
         ]);
     }
