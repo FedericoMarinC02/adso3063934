@@ -16,7 +16,7 @@ class PetController extends Controller
             return response()->json(['message' => 'No pets found 🐶'], 404);
         } else {
             return response()->json([
-                'mesagge' => 'Successfull Query 🐶',
+                'message' => 'Successfull Query 🐶',
                 'pets' => $pets,
             ], 200);
         }
@@ -28,15 +28,18 @@ class PetController extends Controller
     public function store(Request $request)
     {
         try {
-            // Validación correcta
+            // Validación - todos los campos son opcionales
             $validated = $request->validate([
-                'name' => 'required|string',
-                'kind' => 'required|string',
-                'weight' => 'required|numeric',
-                'age' => 'required|numeric',
-                'breed' => 'required|string',
-                'location' => 'required|string',
-                'description' => 'required|string',
+                'name' => 'sometimes|string',
+                'kind' => 'sometimes|string',
+                'weight' => 'sometimes|numeric',
+                'age' => 'sometimes|numeric',
+                'breed' => 'sometimes|string',
+                'location' => 'sometimes|string',
+                'description' => 'sometimes|string',
+                'image' => 'sometimes|string',
+                'active' => 'sometimes|boolean',
+                'status' => 'sometimes|string',
             ]);
 
             // Crear el registro si todo está bien
@@ -65,16 +68,16 @@ class PetController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Request $request)
+    public function show(string $id)
     {
-        $pet = Pet::find($request->id);
+        $pet = Pet::find($id);
         if ($pet) {
             return response()->json([
                 'message' => 'Successfull Query 🐶',
                 'pet' => $pet,
             ], 200);
         } else {
-            return response()->json(['error' => 'Pet not found 🐾'], 404);
+            return response()->json(['message' => 'Pet not found 🐾'], 404);
         }
     }
 
@@ -130,7 +133,7 @@ class PetController extends Controller
         }
 
         return response()->json([
-            'error' => 'Pet not found 🐾',
+            'message' => 'Pet not found 🐾',
         ], 404);
     }
 }

@@ -1,0 +1,525 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=VT323&display=swap');
+
+/* Body */
+body {
+    font-family: VT323;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    min-height: 100dvh;
+}
+
+/* Main */
+main {
+    background-color: #cdcdcd;
+    border-radius: 5px;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 526px;
+    width: 246px;
+}
+
+main h2 {
+    font-weight: 450;
+    margin: 0.3rem 0 0.4rem 1rem;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Login */
+main#login {
+    background: url(../imgs/perrito.png) no-repeat center;
+    background-size: cover;
+}
+
+main#login header {
+    background-color: #E26EE5;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 246px;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    z-index: 10;
+}
+
+main#login form {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    padding: 0 0.6rem;
+    bottom: 1rem;
+    gap: 1rem;
+}
+
+main#login form label {
+    display: flex;
+    flex-direction: column;
+}
+
+main#login form label input {
+    border: 2px solid black;
+    color: black;
+    font-family: VT323;
+    border-radius: 4px;
+    height: 30px;
+    outline: none;
+    text-indent: 0.4rem;
+    width: 220px;
+}
+
+main#login form label input::placeholder {
+    color: #D9D9D9;
+}
+
+main#login form button {
+    background-color: #E26EE5;
+    border: 2px solid #E26EE5;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: VT323;
+    color: #fff;
+    width: 224px;
+    height: 36px;
+    transition: transform 0.1s ease-in;
+}
+
+main#login form button:hover {
+    transform: scale(1.030);
+}
+
+/* Dashboard */
+main#dashboard header {
+    background-color: #E26EE5;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 246px;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    z-index: 10;
+}
+
+main#dashboard nav {
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+main#dashboard nav a:link,
+main#dashboard nav a:visited {
+    background-color: #B70000;
+    color: #ffffff;
+    width: 100px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    text-decoration: none;
+    text-indent: -9999px;
+    transition: transform 0.2s ease-in;
+}
+
+/* Ensure nav images are visible and properly sized */
+main#dashboard nav a img {
+    display: block;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    margin: 0;
+}
+
+main#dashboard nav a.btnAdd {
+    background-color: #05941F;
+}
+
+main#dashboard nav a:hover {
+    transform: scale(1.025);
+}
+
+main#dashboard section.list {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+    padding: 0.5rem 0.3rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+main#dashboard section.list div.row {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem;
+    width: 220px;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+main#dashboard section.list div.row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border-color: #E26EE5;
+}
+
+main#dashboard section.list div.row:nth-child(even) {
+    background: linear-gradient(135deg, #f9e5ff 0%, #f0f0f0 100%);
+}
+
+main#dashboard section.list div.row img {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+main#dashboard section.list div.row div.data {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    width: 135px;
+    min-width: 0;
+}
+
+main#dashboard section.list div.row div.data h3 {
+    font-size: 11px;
+    font-weight: 700;
+    margin: 0 0 2px 0;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+main#dashboard section.list div.row div.data h4 {
+    font-size: 9px;
+    font-weight: 400;
+    margin: 0;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+main#dashboard section.list div.row nav.actions {
+    padding-top: 0;
+    display: flex;
+    gap: 0.3rem;
+    flex-shrink: 0;
+}
+
+main#dashboard section.list div.row nav.actions a:link,
+main#dashboard section.list div.row nav.actions a:visited {
+    height: 24px;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    background-size: 16px 16px;
+    transition: all 0.15s ease-in;
+}
+
+main#dashboard section.list div.row nav.actions a:hover {
+    transform: scale(1.1);
+    background-color: rgba(226, 110, 229, 0.2);
+}
+
+main#dashboard section.list div.row nav.actions a.btnShow,
+main#dashboard section.list div.row nav.actions a.btnEdit,
+main#dashboard section.list div.row nav.actions a.btnDelete {
+    background: none !important;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+main#dashboard section.list div.row nav.actions svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Add & Edit */
+main#add,
+main#edit {
+    background-color: #cdcdcd;
+}
+
+main#add form,
+main#edit form {
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 0.6rem;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+main#add form label,
+main#edit form label {
+    display: flex;
+    flex-direction: column;
+}
+
+main#add form label input,
+main#edit form label input {
+    border: 2px solid black;
+    color: black;
+    font-family: VT323;
+    border-radius: 4px;
+    height: 30px;
+    outline: none;
+    text-indent: 0.4rem;
+    width: 200px;
+}
+
+main#add form label input::placeholder,
+main#edit form label input::placeholder {
+    color: #D9D9D9;
+}
+
+main#add form label textarea,
+main#edit form label textarea {
+    height: 80px;
+    text-indent: 0;
+    width: 200px;
+    font-family: VT323;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+main#add form div.actions,
+main#edit form div.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 220px;
+}
+
+main#add form div.actions button,
+main#add form div.actions a:link,
+main#add form div.actions a:visited,
+main#edit form div.actions button,
+main#edit form div.actions a:link,
+main#edit form div.actions a:visited {
+    background-color: #E26EE5;
+    border: 2px solid #E26EE5;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: VT323;
+    color: #fff;
+    width: 100px;
+    height: 36px;
+    transition: transform 0.1s ease-in;
+}
+
+main#add form div.actions button:hover,
+main#add form div.actions a:hover,
+main#edit form div.actions button:hover,
+main#edit form div.actions a:hover {
+    transform: scale(1.030);
+}
+
+main#add form a.btnCancel,
+main#edit form a.btnCancel {
+    background-color: #FF1A1E;
+    border: 2px solid #FF1A1E;
+    text-decoration: none;
+    font-size: 0.8rem;
+    display: flex;
+    height: 30px;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+main#add header,
+main#edit header {
+    background-color: #E26EE5;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 246px;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    z-index: 10;
+}
+
+main#add header a:link,
+main#add header a:visited,
+main#edit header a:link,
+main#edit header a:visited {
+    display: flex;
+    position: absolute;
+    left: 0.4rem;
+    transition: transform 0.2s ease-in;
+}
+
+main#add header a:hover,
+main#edit header a:hover {
+    transform: translateX(-4px);
+}
+
+/* ========= SHOW SECTION - NUEVO ========= */
+main#show {
+    background-color: #cdcdcd;
+}
+
+main#show header {
+    background-color: #E26EE5;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 246px;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    z-index: 10;
+}
+
+main#show header a:link,
+main#show header a:visited {
+    display: flex;
+    position: absolute;
+    left: 0.4rem;
+    transition: transform 0.2s ease-in;
+}
+
+main#show header a:hover {
+    transform: translateX(-4px);
+}
+
+/* Contenedor de la imagen */
+main#show .pet-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    width: 200px;
+    height: 200px;
+    background-color: #f0f0f0;
+    border: 2px solid black;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+main#show .pet-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contenedor de detalles */
+main#show .pet-details {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    gap: 0.5rem;
+}
+
+main#show .detail {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    padding: 0.2rem 0;
+    border-bottom: 1px dashed #999;
+}
+
+main#show .detail .label {
+    font-weight: bold;
+    color: #333;
+    min-width: 85px;
+    font-size: 1rem;
+}
+
+main#show .detail .value {
+    color: #000;
+    font-size: 1rem;
+    word-break: break-word;
+    flex: 1;
+}
+
+/* Botones de acción para show */
+main#show .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    margin: 1rem 0;
+    width: 210px;
+    gap: 0.5rem;
+}
+
+main#show .actions a:link,
+main#show .actions a:visited,
+main#show .actions button {
+    background-color: #E26EE5;
+    border: 2px solid #E26EE5;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: VT323;
+    color: #fff;
+    width: 100px;
+    height: 36px;
+    transition: transform 0.1s ease-in;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+main#show .actions a:hover,
+main#show .actions button:hover {
+    transform: scale(1.030);
+}
+
+main#show .actions a.btnEdit {
+    background-color: #05941F;
+    border: 2px solid #05941F;
+}
+
+main#show .actions a.btnDelete {
+    background-color: #FF1A1E;
+    border: 2px solid #FF1A1E;
+}
+
+main.animateView {
+    animation: animateView 0.4s ease-in 1;
+}
+
+@keyframes animateView {
+    0% {
+        opacity: 0;
+        transform: scale(.6);
+    }
+}

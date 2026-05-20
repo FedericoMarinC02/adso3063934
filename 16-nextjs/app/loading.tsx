@@ -1,6 +1,14 @@
-export default function Loading() {
+import Image from "next/image";
 
-  // Stack uses React Suspense, which will render this page while user data is being fetched.
-  // See: https://nextjs.org/docs/app/api-reference/file-conventions/loading
-  return <></>;
+export default function Loading() {
+    return (
+        <div className="flex justify-center items-center h-screen">
+            <Image
+                src="/imgs/carga.gif"
+                width={300}
+                height={300}
+                alt="loading"
+            />
+        </div>
+    )
 }

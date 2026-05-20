@@ -1,2 +1,317 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+/* Limit Tailwind's class scanner to our source files to avoid garbage classes like bg-[URL()] */
+@source "./app/**/*.{ts,tsx,js,jsx}", "./components/**/*.{ts,tsx,js,jsx}";
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background:
+    radial-gradient(circle at top, rgba(34, 211, 238, 0.12), transparent 28%),
+    radial-gradient(circle at 20% 20%, rgba(244, 63, 94, 0.08), transparent 24%),
+    linear-gradient(180deg, #0a0f1f 0%, #0b1220 45%, #090d18 100%);
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background: transparent;
+}
+
+.cyberpunk-bg {
+  position: relative;
+  isolation: isolate;
+}
+
+.app-shell {
+  position: relative;
+  z-index: 4;
+}
+
+.cyberpunk-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(circle at center, black 55%, transparent 100%);
+}
+
+.cyberpunk-bg::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 15% 80%, rgba(163, 230, 53, 0.05), transparent 22%),
+    radial-gradient(circle at 85% 15%, rgba(56, 189, 248, 0.08), transparent 26%),
+    radial-gradient(circle at 60% 30%, rgba(244, 63, 94, 0.05), transparent 20%);
+  animation: ambient-glow-shift 18s ease-in-out infinite alternate;
+}
+
+.cyberpunk-particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+  mix-blend-mode: screen;
+}
+
+.cyberpunk-particles canvas {
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+}
+
+.cyberpunk-particles::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.cyberpunk-particles::before {
+  background:
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(56, 189, 248, 0.035) 18%,
+      transparent 28%,
+      rgba(244, 63, 94, 0.025) 48%,
+      transparent 58%,
+      rgba(168, 85, 247, 0.03) 78%,
+      transparent 100%
+    );
+  opacity: 0.72;
+  animation: scan-sweep 8s linear infinite;
+}
+
+/* Let Stack Auth forms use the full card width (library defaults to 380px inline). */
+.stack-auth-card .stack-scope {
+  max-width: 100% !important;
+  flex-basis: auto !important;
+}
+
+.hover-3d {
+  display: inline-grid;
+  perspective: 75rem;
+  --transform: 0, 0;
+  --shine: 100% 100%;
+  --shadow: 0rem 0rem 0rem;
+  --ease: linear(0, 0.931 13.8%, 1.196 21.4%, 1.343 29.8%, 1.378 36%, 1.365 43.2%, 1.059 78%, 1);
+  filter:
+    drop-shadow(var(--shadow) 0.1rem #00000003)
+    drop-shadow(var(--shadow) 0.2rem #00000003)
+    drop-shadow(var(--shadow) 0.3rem #00000003)
+    drop-shadow(var(--shadow) 0.4rem #00000003);
+  transition: filter ease-out 400ms;
+}
+
+.hover-3d > :nth-child(n + 2) {
+  isolation: isolate;
+  z-index: 1;
+}
+
+.hover-3d > :first-child {
+  position: relative;
+  overflow: hidden;
+  grid-area: 1 / 1 / 4 / 4;
+  transform: rotate3d(var(--transform), 0, 10deg);
+  transition:
+    transform var(--ease) 500ms,
+    scale var(--ease) 500ms,
+    outline-color ease-out 500ms;
+  outline: 0.5px solid #0000;
+  outline-offset: -1px;
+}
+
+.hover-3d > :first-child::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 33.333333%;
+  height: 33.333333%;
+  pointer-events: none;
+  scale: 500%;
+  opacity: 0;
+  filter: blur(0.75rem);
+  background-image: radial-gradient(circle at 50%, #fff3 10%, transparent 50%);
+  translate: var(--shine);
+  transition:
+    translate ease-out 400ms,
+    opacity ease-out 400ms;
+}
+
+.hover-3d:hover > :first-child {
+  outline-color: #fff1;
+}
+
+.hover-3d:hover > :first-child::before {
+  opacity: 1;
+}
+
+.hover-3d > :nth-child(n + 2) {
+  scale: 1.2;
+}
+
+.hover-3d > :nth-child(2) {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.hover-3d > :nth-child(3) {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.hover-3d > :nth-child(4) {
+  grid-area: 1 / 3 / 2 / 4;
+}
+
+.hover-3d > :nth-child(5) {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.hover-3d > :nth-child(6) {
+  grid-area: 2 / 3 / 3 / 4;
+}
+
+.hover-3d > :nth-child(7) {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.hover-3d > :nth-child(8) {
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+.hover-3d > :nth-child(9) {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+.hover-3d:hover > :first-child {
+  scale: 1.05;
+}
+
+.hover-3d:has(> :nth-child(2):hover) {
+  --transform: -1, 1;
+  --shine: 0% 0%;
+  --shadow: -0.5rem -0.5rem;
+}
+
+.hover-3d:has(> :nth-child(3):hover) {
+  --transform: -1, 0;
+  --shine: 100% 0%;
+  --shadow: 0rem -0.5rem;
+}
+
+.hover-3d:has(> :nth-child(4):hover) {
+  --transform: -1, -1;
+  --shine: 200% 0%;
+  --shadow: 0.5rem -0.5rem;
+}
+
+.hover-3d:has(> :nth-child(5):hover) {
+  --transform: 0, 1;
+  --shine: 0% 100%;
+  --shadow: -0.5rem 0rem;
+}
+
+.hover-3d:has(> :nth-child(6):hover) {
+  --transform: 0, -1;
+  --shine: 200% 100%;
+  --shadow: 0.5rem 0rem;
+}
+
+.hover-3d:has(> :nth-child(7):hover) {
+  --transform: 1, 1;
+  --shine: 0% 200%;
+  --shadow: -0.5rem 0.5rem;
+}
+
+.hover-3d:has(> :nth-child(8):hover) {
+  --transform: 1, 0;
+  --shine: 100% 200%;
+  --shadow: 0rem 0.5rem;
+}
+
+.hover-3d:has(> :nth-child(9):hover) {
+  --transform: 1, -1;
+  --shine: 200% 200%;
+  --shadow: 0.5rem 0.5rem;
+}
+
+@keyframes ambient-glow-shift {
+  0% {
+    filter: saturate(1) brightness(1);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    filter: saturate(1.1) brightness(1.04);
+    transform: translate3d(0, -1.5%, 0);
+  }
+}
+
+@keyframes scan-sweep {
+  0% {
+    transform: translateY(-14%);
+    opacity: 0.22;
+  }
+  50% {
+    opacity: 0.52;
+  }
+  100% {
+    transform: translateY(14%);
+    opacity: 0.22;
+  }
+}
+
+@keyframes menu-fade {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -10px, 0) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.animate-menu-fade {
+  animation: menu-fade 220ms ease-out;
+}
+
+.sidebar-tooltip-bubble::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -0.4rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-left: 1px solid rgba(103, 232, 249, 0.16);
+  border-bottom: 1px solid rgba(103, 232, 249, 0.16);
+  background: rgba(2, 6, 23, 0.92);
+  transform: translateY(-50%) rotate(45deg);
+  backdrop-filter: blur(18px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cyberpunk-particles {
+    display: none;
+  }
+
+  .hover-3d figure,
+  .hover-3d img,
+  .hover-3d::after,
+  .animate-menu-fade,
+  .sidebar-tooltip-bubble {
+    transition: none;
+    animation: none;
+  }
+}

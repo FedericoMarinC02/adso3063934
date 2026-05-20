@@ -1,0 +1,205 @@
+.routing-subtitle {
+    color: #cdd6f4;
+    margin-bottom: 12px;
+}
+
+.routing-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 12px 0 20px;
+}
+
+.nav-pill {
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(13, 31, 44, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #eaf5ff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.nav-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.nav-pill.active {
+    border-color: #ffd700;
+    box-shadow: 0 0 18px rgba(255, 215, 0, 0.25);
+}
+
+.route-card {
+    margin: 12px 0;
+    padding: 18px;
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 0.8rem;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.route-card h3 {
+    margin: 0;
+    color: #f5f7ff;
+}
+
+.route-card p {
+    margin: 10px 0;
+    color: #cdd6f4;
+}
+
+.route-points {
+    padding-left: 18px;
+    color: #d8e9ff;
+    margin: 8px 0 0;
+    line-height: 1.4;
+}
+
+.route-grid {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    margin-top: 12px;
+}
+
+.card-link {
+    text-decoration: none;
+}
+
+.route-mini-card {
+    padding: 12px;
+    background: rgba(13, 31, 44, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.6rem;
+    color: #eaf5ff;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.pill {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #ffd700;
+    color: #1a1a1a;
+    font-weight: 700;
+    width: fit-content;
+}
+
+.route-highlight {
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 0.6rem;
+    background: #0007;
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    color: #eaf5ff;
+}
+
+.detail-layout {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    align-items: start;
+    justify-items: center;
+    margin-top: 12px;
+}
+
+.detail-item {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 340px;
+    justify-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.9rem;
+    padding: 6px;
+}
+
+.detail-item::before,
+.detail-item::after {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    opacity: 0.42;
+}
+
+.detail-item::before {
+    background-image:
+        radial-gradient(8px 8px at 20% 30%, var(--tint, #ffd700), transparent 55%),
+        radial-gradient(10px 10px at 70% 60%, var(--tint, #ffd700), transparent 55%),
+        radial-gradient(6px 6px at 40% 80%, var(--tint, #ffd700), transparent 60%);
+    background-size: 220px 220px, 260px 260px, 240px 240px;
+    animation: floatParticles 12s linear infinite;
+}
+
+.detail-item::after {
+    background: radial-gradient(circle at 50% 50%, var(--tint, #ffd700) 0%, transparent 55%);
+    filter: blur(40px);
+    opacity: 0.3;
+}
+
+.detail-item > * {
+    position: relative;
+    z-index: 1;
+}
+
+.detail-info p {
+    margin: 6px 0;
+    color: #cdd6f4;
+}
+
+.detail-info strong {
+    color: #ffd700;
+}
+
+.detail-sep {
+    margin: 6px 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.detail-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    color: #f5f7ff;
+    margin-bottom: 4px;
+}
+
+.detail-title .pill {
+    margin: 0;
+}
+
+.detail-desc {
+    margin: 0;
+    color: #cdd6f4;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 10px 12px;
+    border-radius: 0.6rem;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+/* Alinea la tarjeta para que no se vea fuera de centro en detalles */
+.detail-item .pokemon-card-capture {
+    width: 100%;
+    max-width: 260px;
+}
+
+@keyframes floatParticles {
+    from { transform: translate3d(0,0,0) rotate(0deg); }
+    to   { transform: translate3d(-40px, -30px, 0) rotate(360deg); }
+}

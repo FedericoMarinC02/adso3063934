@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API JS: Larapets</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.18/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="CSS/master.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.18/dist/sweetalert2.all.min.js"></script>
+</head>
+
+<body>
+    <!-- view - login -->
+    <main id="login">
+        <header>
+            <img src="imgs/title-login.png" alt="">
+        </header>
+        <form id="loginForm" action="">
+            <label for="email">
+                Email:
+                <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+            </label>
+            <label for="password">
+                Password:
+                <input type="password" id="password" name="password" placeholder="••••••••" required>
+            </label>
+            <button type="button" class="btnLogin">Login</button>
+        </form>
+    </main>
+
+    <!-- View Dasboard -->
+    <main id="dashboard">
+        <header>
+            <img src="imgs/Title-dashboard.png" alt="Dashboard">
+        </header>
+
+        <!-- Nav -->
+        <nav>
+            <a href="javascript:;" class="btnAdd" aria-label="Add">
+                <!-- inline Add.svg to ensure visibility -->
+                <svg width="29" height="15" viewBox="0 0 29 15" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <path
+                        d="M0.386719 11V10.5435L1.20312 10.4199V3.48047L0.386719 3.35693V2.90039H3.03467C4.56006 2.90039 5.53402 3.31217 5.95654 4.13574C6.1141 4.4401 6.19287 4.80713 6.19287 5.23682C6.19287 5.66292 6.12126 6.04069 5.97803 6.37012C5.83838 6.69954 5.62891 6.97884 5.34961 7.20801C4.77311 7.68783 3.94238 7.92773 2.85742 7.92773H2.21289V10.4199L3.271 10.5435V11H0.386719ZM2.21289 3.55029V7.3584H3.00781C3.72038 7.3584 4.26465 7.16862 4.64062 6.78906C4.97363 6.44531 5.14014 5.98161 5.14014 5.39795C5.14014 4.79639 4.98079 4.34701 4.66211 4.0498C4.30762 3.7168 3.72217 3.55029 2.90576 3.55029H2.21289ZM11.1611 9.77002L11.4673 10.1191C10.8979 10.6312 10.3465 10.9517 9.81299 11.0806C9.69482 11.1092 9.57845 11.1235 9.46387 11.1235C8.67611 11.1235 8.03516 10.8747 7.54102 10.377C7.05046 9.88997 6.80518 9.25439 6.80518 8.47021C6.80518 7.68962 7.03613 7.02181 7.49805 6.4668C8.00651 5.86165 8.66715 5.55908 9.47998 5.55908C10.0422 5.55908 10.5166 5.76139 10.9033 6.16602C11.3151 6.58854 11.521 7.13818 11.521 7.81494L11.2686 8.04053L7.7666 8.29297C7.77376 8.94466 7.98503 9.46566 8.40039 9.85596C8.77279 10.1997 9.20605 10.3716 9.7002 10.3716C10.1943 10.3716 10.6813 10.1711 11.1611 9.77002ZM7.8042 7.78809L10.5649 7.53564C10.5399 6.94124 10.3107 6.53304 9.87744 6.31104C9.72347 6.23226 9.52653 6.19287 9.28662 6.19287C9.04671 6.19287 8.83187 6.25195 8.64209 6.37012C8.45589 6.48828 8.30192 6.63151 8.18018 6.7998C7.94743 7.11849 7.8221 7.44792 7.8042 7.78809ZM13.7339 9.35645C13.7339 10.0726 14.0239 10.4307 14.604 10.4307C14.9084 10.4307 15.2038 10.3053 15.4902 10.0547L15.7803 10.4092C15.4759 10.6598 15.1948 10.8424 14.937 10.957C14.6792 11.068 14.4518 11.1235 14.2549 11.1235C14.0579 11.1235 13.8664 11.0806 13.6802 10.9946C13.4976 10.9087 13.3454 10.7852 13.2236 10.624C12.9837 10.3125 12.8638 9.87028 12.8638 9.29736V6.31641H12.1816V5.84912L12.8638 5.68799V4.96826L13.4976 4.33447H13.7339V5.68799H15.5063V6.31641H13.7339V9.35645Z"
+                        fill="white" />
+                    <path
+                        d="M22.2813 2C21.2367 2 20.2156 2.30974 19.3471 2.89005C18.4786 3.47036 17.8017 4.29518 17.402 5.2602C17.0023 6.22522 16.8977 7.28711 17.1015 8.31157C17.3053 9.33603 17.8082 10.2771 18.5468 11.0157C19.2854 11.7543 20.2265 12.2572 21.2509 12.461C22.2754 12.6648 23.3373 12.5602 24.3023 12.1605C25.2673 11.7608 26.0921 11.0839 26.6725 10.2154C27.2528 9.34686 27.5625 8.32578 27.5625 7.28125C27.561 5.88103 27.0041 4.53858 26.014 3.54848C25.0239 2.55837 23.6815 2.00148 22.2813 2ZM22.2813 11.75C21.3974 11.75 20.5334 11.4879 19.7985 10.9969C19.0637 10.5058 18.4909 9.80792 18.1527 8.99137C17.8144 8.17481 17.7259 7.27629 17.8984 6.40944C18.0708 5.54259 18.4964 4.74633 19.1214 4.12137C19.7463 3.4964 20.5426 3.07079 21.4094 2.89837C22.2763 2.72594 23.1748 2.81443 23.9914 3.15266C24.8079 3.49089 25.5058 4.06366 25.9969 4.79855C26.4879 5.53343 26.75 6.39741 26.75 7.28125C26.7487 8.46602 26.2774 9.60189 25.4397 10.4396C24.6019 11.2774 23.466 11.7487 22.2813 11.75ZM24.7188 7.28125C24.7188 7.38899 24.676 7.49233 24.5998 7.56851C24.5236 7.6447 24.4202 7.6875 24.3125 7.6875H22.6875V9.3125C22.6875 9.42024 22.6447 9.52358 22.5685 9.59976C22.4923 9.67595 22.389 9.71875 22.2813 9.71875C22.1735 9.71875 22.0702 9.67595 21.994 9.59976C21.9178 9.52358 21.875 9.42024 21.875 9.3125V7.6875H20.25C20.1423 7.6875 20.0389 7.6447 19.9627 7.56851C19.8866 7.49233 19.8438 7.38899 19.8438 7.28125C19.8438 7.17351 19.8866 7.07017 19.9627 6.99399C20.0389 6.9178 20.1423 6.875 20.25 6.875H21.875V5.25C21.875 5.14226 21.9178 5.03892 21.994 4.96274C22.0702 4.88655 22.1735 4.84375 22.2813 4.84375C22.389 4.84375 22.4923 4.88655 22.5685 4.96274C22.6447 5.03892 22.6875 5.14226 22.6875 5.25V6.875H24.3125C24.4202 6.875 24.5236 6.9178 24.5998 6.99399C24.676 7.07017 24.7188 7.17351 24.7188 7.28125Z"
+                        fill="white" />
+                </svg>
+            </a>
+            <a href="javascript:;" class="btnLogout" aria-label="Logout">
+                <svg width="48" height="14" viewBox="0 0 48 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M46.625 3H37.875C37.6429 3 37.4204 3.09219 37.2563 3.25628C37.0922 3.42038 37 3.64294 37 3.875V12.625C37 12.8571 37.0922 13.0796 37.2563 13.2437C37.4204 13.4078 37.6429 13.5 37.875 13.5H46.625C46.8571 13.5 47.0796 13.4078 47.2437 13.2437C47.4078 13.0796 47.5 12.8571 47.5 12.625V3.875C47.5 3.64294 47.4078 3.42038 47.2437 3.25628C47.0796 3.09219 46.8571 3 46.625 3ZM46.625 12.625H37.875V3.875H46.625V12.625ZM44.3095 6.80953L42.8685 8.25L44.3095 9.69047C44.3502 9.73112 44.3824 9.77937 44.4044 9.83248C44.4264 9.88559 44.4377 9.94251 44.4377 10C44.4377 10.0575 44.4264 10.1144 44.4044 10.1675C44.3824 10.2206 44.3502 10.2689 44.3095 10.3095C44.2689 10.3502 44.2206 10.3824 44.1675 10.4044C44.1144 10.4264 44.0575 10.4377 44 10.4377C43.9425 10.4377 43.8856 10.4264 43.8325 10.4044C43.7794 10.3824 43.7311 10.3502 43.6905 10.3095L42.25 8.86852L40.8095 10.3095C40.7689 10.3502 40.7206 10.3824 40.6675 10.4044C40.6144 10.4264 40.5575 10.4377 40.5 10.4377C40.4425 10.4377 40.3856 10.4264 40.3325 10.4044C40.2794 10.3824 40.2311 10.3502 40.1905 10.3095C40.1498 10.2689 40.1176 10.2206 40.0956 10.1675C40.0736 10.1144 40.0623 10.0575 40.0623 10C40.0623 9.94251 40.0736 9.88559 40.0956 9.83248C40.1176 9.77937 40.1498 9.73112 40.1905 9.69047L41.6315 8.25L40.1905 6.80953C40.1084 6.72744 40.0623 6.6161 40.0623 6.5C40.0623 6.3839 40.1084 6.27256 40.1905 6.19047C40.2726 6.10838 40.3839 6.06226 40.5 6.06226C40.6161 6.06226 40.7274 6.10838 40.8095 6.19047L42.25 7.63148L43.6905 6.19047C43.7311 6.14982 43.7794 6.11758 43.8325 6.09558C43.8856 6.07358 43.9425 6.06226 44 6.06226C44.0575 6.06226 44.1144 6.07358 44.1675 6.09558C44.2206 6.11758 44.2689 6.14982 44.3095 6.19047C44.3502 6.23112 44.3824 6.27937 44.4044 6.33248C44.4264 6.38559 44.4377 6.44251 44.4377 6.5C44.4377 6.55749 44.4264 6.61441 44.4044 6.66752C44.3824 6.72063 44.3502 6.76888 44.3095 6.80953Z" fill="white"/>
+                    <path d="M3.01855 2.90039V3.35693L2.21289 3.48047V10.3555H5.15625L5.47314 9.15234H5.91357L5.86523 11H0.386719V10.5435L1.20312 10.4199V3.48047L0.386719 3.35693V2.90039H3.01855ZM6.95557 8.38965C6.95557 7.97786 7.02539 7.59473 7.16504 7.24023C7.30827 6.88574 7.50163 6.58496 7.74512 6.33789C8.24642 5.81868 8.8641 5.55908 9.59814 5.55908C10.4504 5.55908 11.1164 5.81152 11.5962 6.31641C12.0509 6.7998 12.2783 7.4318 12.2783 8.2124C12.2783 9.08252 12.0205 9.78971 11.5049 10.334C11.0036 10.8604 10.3841 11.1235 9.64648 11.1235C8.80501 11.1235 8.139 10.8639 7.64844 10.3447C7.18652 9.85775 6.95557 9.20605 6.95557 8.38965ZM8.33057 6.78906C8.18734 6.97168 8.07812 7.18652 8.00293 7.43359C7.93132 7.68066 7.89551 7.94922 7.89551 8.23926C7.89551 8.52572 7.92773 8.8068 7.99219 9.08252C8.06022 9.35465 8.16406 9.59635 8.30371 9.80762C8.61165 10.266 9.05566 10.4951 9.63574 10.4951C10.18 10.4951 10.6025 10.3161 10.9033 9.95801C11.2005 9.6071 11.3491 9.13265 11.3491 8.53467C11.3491 7.47477 11.0465 6.76221 10.4414 6.39697C10.2158 6.2609 9.94906 6.19287 9.64111 6.19287C9.33317 6.19287 9.07357 6.24658 8.8623 6.354C8.65104 6.45785 8.4738 6.60286 8.33057 6.78906ZM17.7998 6.47217C17.9681 6.7443 18.0522 7.08268 18.0522 7.4873C18.0522 8.05664 17.7658 8.56152 17.1929 9.00195C16.9422 9.19531 16.6486 9.35645 16.312 9.48535L15.4902 9.79688C15.0964 9.94368 14.8726 10.0457 14.8188 10.103C14.7687 10.1567 14.7437 10.2015 14.7437 10.2373C14.7437 10.2695 14.7616 10.3018 14.7974 10.334C14.8332 10.3662 14.8923 10.3966 14.9746 10.4253C15.1715 10.4933 15.4473 10.5273 15.8018 10.5273C16.1562 10.5273 16.4875 10.547 16.7954 10.5864C17.1034 10.6222 17.3755 10.6921 17.6118 10.7959C18.1274 11.0286 18.3853 11.4261 18.3853 11.9883C18.3853 12.3678 18.2367 12.7205 17.9395 13.0464C17.5277 13.494 16.944 13.793 16.1885 13.9434C15.9629 13.9863 15.714 14.0078 15.4419 14.0078C15.1698 14.0078 14.8923 13.9792 14.6094 13.9219C14.3265 13.8646 14.0794 13.7751 13.8682 13.6533C13.4206 13.3991 13.1968 13.0177 13.1968 12.5093C13.1968 12.1154 13.3633 11.8128 13.6963 11.6016L14.0454 11.3921C14.1421 11.342 14.2495 11.3044 14.3677 11.2793C14.4894 11.2542 14.6112 11.2256 14.7329 11.1934C14.3462 11.1182 14.0794 10.9642 13.9326 10.7314C13.8825 10.6491 13.8574 10.5632 13.8574 10.4736C13.8574 10.3805 13.8753 10.3018 13.9111 10.2373C13.9469 10.1729 14.0114 10.1084 14.1045 10.0439C14.1976 9.97949 14.3265 9.90788 14.4912 9.8291L15.1304 9.52832C14.7938 9.46387 14.4787 9.30811 14.1851 9.06104C13.7804 8.72087 13.5781 8.24105 13.5781 7.62158C13.5781 7.02718 13.8395 6.52409 14.3623 6.1123C14.8242 5.74349 15.3327 5.55908 15.8877 5.55908C16.4427 5.55908 16.9225 5.68978 17.3271 5.95117C17.585 5.77214 18.0111 5.64502 18.6055 5.56982L18.7505 5.73633L18.498 6.47217H17.7998ZM14.1689 12.1978C14.1475 12.298 14.1367 12.4233 14.1367 12.5737C14.1367 12.7241 14.1922 12.862 14.3032 12.9873C14.4142 13.1162 14.5557 13.2147 14.7275 13.2827C15.0068 13.3937 15.3219 13.4492 15.6729 13.4492C16.0273 13.4492 16.2977 13.4206 16.4839 13.3633C16.6701 13.306 16.833 13.2236 16.9727 13.1162C17.2878 12.8799 17.4453 12.5719 17.4453 12.1924C17.4453 11.7161 17.1087 11.4476 16.4355 11.3867C16.2386 11.3688 16.0327 11.3599 15.8179 11.3599C15.202 11.3599 14.7132 11.5407 14.3516 11.9023C14.2513 12.0026 14.1904 12.1011 14.1689 12.1978ZM14.5771 6.83203C14.502 7.00749 14.4644 7.22233 14.4644 7.47656C14.4644 7.72721 14.502 7.94564 14.5771 8.13184C14.6523 8.31803 14.7544 8.47559 14.8833 8.60449C15.1447 8.86589 15.4813 8.99658 15.8931 8.99658C16.4302 8.99658 16.8133 8.771 17.0425 8.31982C17.1284 8.15153 17.1714 7.94385 17.1714 7.69678C17.1714 7.44613 17.1338 7.22412 17.0586 7.03076C16.9834 6.8374 16.8813 6.67269 16.7524 6.53662C16.4839 6.25374 16.1473 6.1123 15.7427 6.1123C15.1698 6.1123 14.7812 6.35221 14.5771 6.83203ZM19.7925 8.38965C19.7925 7.97786 19.8623 7.59473 20.002 7.24023C20.1452 6.88574 20.3385 6.58496 20.582 6.33789C21.0833 5.81868 21.701 5.55908 22.4351 5.55908C23.2873 5.55908 23.9533 5.81152 24.4331 6.31641C24.8879 6.7998 25.1152 7.4318 25.1152 8.2124C25.1152 9.08252 24.8574 9.78971 24.3418 10.334C23.8405 10.8604 23.221 11.1235 22.4834 11.1235C21.6419 11.1235 20.9759 10.8639 20.4854 10.3447C20.0234 9.85775 19.7925 9.20605 19.7925 8.38965ZM21.1675 6.78906C21.0243 6.97168 20.915 7.18652 20.8398 7.43359C20.7682 7.68066 20.7324 7.94922 20.7324 8.23926C20.7324 8.52572 20.7646 8.8068 20.8291 9.08252C20.8971 9.35465 21.001 9.59635 21.1406 9.80762C21.4486 10.266 21.8926 10.4951 22.4727 10.4951C23.0169 10.4951 23.4395 10.3161 23.7402 9.95801C24.0374 9.6071 24.186 9.13265 24.186 8.53467C24.186 7.47477 23.8835 6.76221 23.2783 6.39697C23.0527 6.2609 22.786 6.19287 22.478 6.19287C22.1701 6.19287 21.9105 6.24658 21.6992 6.354C21.488 6.45785 21.3107 6.60286 21.1675 6.78906ZM31.7217 10.7744C31.3314 11.0072 31.0199 11.1235 30.7871 11.1235C30.5651 11.1235 30.4004 11.0788 30.293 10.9893C30.0996 10.8389 30.0029 10.6616 30.0029 10.4575V10.3823C29.695 10.6437 29.3763 10.8335 29.0469 10.9517C28.7174 11.0662 28.4292 11.1235 28.1821 11.1235C27.6808 11.1235 27.2869 10.9875 27.0005 10.7153C26.7176 10.4396 26.5762 10.0243 26.5762 9.46924V6.52051L25.937 6.41309V5.94043L27.4463 5.55908V9.46924C27.4463 9.7915 27.5573 10.0404 27.7793 10.2158C27.9619 10.359 28.1768 10.4307 28.4238 10.4307C28.8285 10.4307 29.208 10.3232 29.5625 10.1084C29.7236 10.0153 29.8704 9.90609 30.0029 9.78076V6.52051L29.1919 6.41309V5.96729L30.873 5.55908V10.0923C30.873 10.2856 30.9697 10.3823 31.1631 10.3823C31.2992 10.3823 31.4478 10.3447 31.6089 10.2695L31.7217 10.7744ZM33.8755 9.35645C33.8755 10.0726 34.1655 10.4307 34.7456 10.4307C35.05 10.4307 35.3454 10.3053 35.6318 10.0547L35.9219 10.4092C35.6175 10.6598 35.3364 10.8424 35.0786 10.957C34.8208 11.068 34.5934 11.1235 34.3965 11.1235C34.1995 11.1235 34.008 11.0806 33.8218 10.9946C33.6392 10.9087 33.487 10.7852 33.3652 10.624C33.1253 10.3125 33.0054 9.87028 33.0054 9.29736V6.31641H32.3232V5.84912L33.0054 5.68799V4.96826L33.6392 4.33447H33.8755V5.68799H35.6479V6.31641H33.8755V9.35645Z" fill="white"/>
+                </svg>
+            </a>
+        </nav>
+        <h2>Pet list</h2>
+        <section class="list">
+            <div class="row">
+                <img src="imgs/pet01.png" alt="Pet01">
+                <div class="data">
+                    <h3>firulais</h3>
+                    <h4>Dog: Freach Bulldog</h4>
+                </div>
+                <nav class="actions">
+                    <a href="javascript:;" class="btnShow"></a>
+                    <a href="javascript:;" class="btnEdit"></a>
+                    <a href="javascript:;" class="btnDelete"></a>
+                </nav>
+            </div>
+
+            <div class="row">
+                <img src="imgs/pet02.png" alt="Pet02">
+                <div class="data">
+                    <h3>Michi</h3>
+                    <h4>Cat: Persian</h4>
+                </div>
+                <nav class="actions">
+                    <a href="javascript:;" class="btnShow"></a>
+                    <a href="javascript:;" class="btnEdit"></a>
+                    <a href="javascript:;" class="btnDelete"></a>
+                </nav>
+            </div>
+
+
+            <div class="row">
+                <img src="imgs/pet01.png" alt="Pet01">
+                <div class="data">
+                    <h3>firulais</h3>
+                    <h4>Dog: Freach Bulldog</h4>
+                </div>
+                <nav class="actions">
+                    <a href="javascript:;" class="btnShow"></a>
+                    <a href="javascript:;" class="btnEdit"></a>
+                    <a href="javascript:;" class="btnDelete"></a>
+                </nav>
+            </div>
+
+            <div class="row">
+                <img src="imgs/pet02.png" alt="Pet02">
+                <div class="data">
+                    <h3>Michi</h3>
+                    <h4>Cat: Persian</h4>
+                </div>
+                <nav class="actions">
+                    <a href="javascript:;" class="btnShow"></a>
+                    <a href="javascript:;" class="btnEdit"></a>
+                    <a href="javascript:;" class="btnDelete"></a>
+                </nav>
+            </div>
+
+            <div class="row">
+                <img src="imgs/pet01.png" alt="Pet01">
+                <div class="data">
+                    <h3>firulais</h3>
+                    <h4>Dog: Freach Bulldog</h4>
+                </div>
+                <nav class="actions">
+                    <a href="javascript:;" class="btnShow"></a>
+                    <a href="javascript:;" class="btnEdit"></a>
+                    <a href="javascript:;" class="btnDelete"></a>
+                </nav>
+            </div>
+
+            <div class="row">
+                <img src="imgs/pet02.png" alt="Pet02">
+                <div class="data">
+                    <h3>Michi</h3>
+                    <h4>Cat: Persian</h4>
+                </div>
+                <nav class="actions">
+                    <a href="javascript:;" class="btnShow"></a>
+                    <a href="javascript:;" class="btnEdit"></a>
+                    <a href="javascript:;" class="btnDelete"></a>
+                </nav>
+            </div>
+
+            <div class="row">
+                <img src="imgs/pet01.png" alt="Pet01">
+                <div class="data">
+                    <h3>firulais</h3>
+                    <h4>Dog: Freach Bulldog</h4>
+                </div>
+                <nav class="actions">
+                    <a href="javascript:;" class="btnShow"></a>
+                    <a href="javascript:;" class="btnEdit"></a>
+                    <a href="javascript:;" class="btnDelete"></a>
+                </nav>
+            </div>
+
+            <div class="row">
+                <img src="imgs/pet02.png" alt="Pet02">
+                <div class="data">
+                    <h3>Michi</h3>
+                    <h4>Cat: Persian</h4>
+                </div>
+                <nav class="actions">
+                    <a href="javascript:;" class="btnShow"></a>
+                    <a href="javascript:;" class="btnEdit"></a>
+                    <a href="javascript:;" class="btnDelete"></a>
+                </nav>
+            </div>
+
+            <div class="row">
+                <img src="imgs/pet01.png" alt="Pet01">
+                <div class="data">
+                    <h3>firulais</h3>
+                    <h4>Dog: Freach Bulldog</h4>
+                </div>
+                <nav class="actions">
+                    <a href="javascript:;" class="btnShow"></a>
+                    <a href="javascript:;" class="btnEdit"></a>
+                    <a href="javascript:;" class="btnDelete"></a>
+                </nav>
+            </div>
+
+            <div class="row">
+                <img src="imgs/pet02.png" alt="Pet02">
+                <div class="data">
+                    <h3>Michi</h3>
+                    <h4>Cat: Persian</h4>
+                </div>
+                <nav class="actions">
+                    <a href="javascript:;" class="btnShow"></a>
+                    <a href="javascript:;" class="btnEdit"></a>
+                    <a href="javascript:;" class="btnDelete"></a>
+                </nav>
+            </div>
+
+            <div class="row">
+                <img src="imgs/pet01.png" alt="Pet01">
+                <div class="data">
+                    <h3>firulais</h3>
+                    <h4>Dog: Freach Bulldog</h4>
+                </div>
+                <nav class="actions">
+                    <a href="javascript:;" class="btnShow"></a>
+                    <a href="javascript:;" class="btnEdit"></a>
+                    <a href="javascript:;" class="btnDelete"></a>
+                </nav>
+            </div>
+
+            <div class="row">
+                <img src="imgs/pet02.png" alt="Pet02">
+                <div class="data">
+                    <h3>Michi</h3>
+                    <h4>Cat: Persian</h4>
+                </div>
+                <nav class="actions">
+                    <a href="javascript:;" class="btnShow"></a>
+                    <a href="javascript:;" class="btnEdit"></a>
+                    <a href="javascript:;" class="btnDelete"></a>
+                </nav>
+            </div>
+
+            <div class="row">
+                <img src="imgs/pet01.png" alt="Pet01">
+                <div class="data">
+                    <h3>firulais</h3>
+                    <h4>Dog: Freach Bulldog</h4>
+                </div>
+                <nav class="actions">
+                    <a href="javascript:;" class="btnShow"></a>
+                    <a href="javascript:;" class="btnEdit"></a>
+                    <a href="javascript:;" class="btnDelete"></a>
+                </nav>
+            </div>
+
+            <div class="row">
+                <img src="imgs/pet02.png" alt="Pet02">
+                <div class="data">
+                    <h3>Michi</h3>
+                    <h4>Cat: Persian</h4>
+                </div>
+                <nav class="actions">
+                    <a href="javascript:;" class="btnShow"></a>
+                    <a href="javascript:;" class="btnEdit"></a>
+                    <a href="javascript:;" class="btnDelete"></a>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <!-- add -->
+    <main id="add">
+        <header>
+            <a href="javascript:;" class="btnBack"><img src="imgs/btn-back.svg" alt="Back"></a>
+            <img src="imgs/title-add.svg" alt="Dashboard">
+        </header>
+
+        <form id="addForm" action="">
+            <label for="addName">
+                Name:
+                <input type="text" id="addName" name="name" placeholder="Enter pet's name">
+            </label>
+            <label for="addKind">
+                Kind:
+                <input type="text" id="addKind" name="kind" placeholder="Enter pet's kind">
+            </label>
+            <label for="addWeight">
+                Weight:
+                <input type="text" id="addWeight" name="weight" placeholder="Enter pet's weight">
+            </label>
+            <label for="addAge">
+                Age:
+                <input type="number" id="addAge" name="age" placeholder="Enter pet's age">
+            </label>
+            <label for="addBreed">
+                Breed:
+                <input type="text" id="addBreed" name="breed" placeholder="Enter pet's breed">
+            </label>
+            <label for="addLocation">
+                Location:
+                <input type="text" id="addLocation" name="location" placeholder="Enter pet's location">
+            </label>
+            <label for="addDescription">
+                Description:
+                <textarea id="addDescription" name="description" placeholder="Enter pet's description"></textarea>
+            </label>
+            <div class="actions">
+                <button type="button" class="btnAddPet">Add Pet</button>
+                <a href="javascript:;" class="btnCancel">Cancel</a>
+            </div>
+        </form>
+    </main>
+
+    <!-- edit -->
+    <main id="edit">
+        <header>
+            <a href="javascript:;" class="btnBack"><img src="imgs/btn-back.svg" alt="Back"></a>
+            <img src="imgs/edit.svg" alt="Dashboard">
+        </header>
+
+        <form id="editForm" action="">
+            <label for="editName">
+                Name:
+                <input type="text" id="editName" name="name" placeholder="Enter pet's name">
+            </label>
+            <label for="editKind">
+                Kind:
+                <input type="text" id="editKind" name="kind" placeholder="Enter pet's kind">
+            </label>
+            <label for="editWeight">
+                Weight:
+                <input type="text" id="editWeight" name="weight" placeholder="Enter pet's weight">
+            </label>
+            <label for="editAge">
+                Age:
+                <input type="number" id="editAge" name="age" placeholder="Enter pet's age">
+            </label>
+            <label for="editBreed">
+                Breed:
+                <input type="text" id="editBreed" name="breed" placeholder="Enter pet's breed">
+            </label>
+            <label for="editLocation">
+                Location:
+                <input type="text" id="editLocation" name="location" placeholder="Enter pet's location">
+            </label>
+            <label for="editDescription">
+                Description:
+                <textarea id="editDescription" name="description" placeholder="Enter pet's description"></textarea>
+            </label>
+            <div class="actions">
+                <button type="button" class="btnUpdatePet">Update Pet</button>
+                <a href="javascript:;" class="btnCancel">Cancel</a>
+            </div>
+        </form>
+    </main>
+
+    <!-- Show -->
+    <main id="show">
+        <header>
+            <a href="javascript:;" class="btnBack"><img src="imgs/btn-back.svg" alt="Back"></a>
+            <img src="imgs/show.svg" alt="Show">
+        </header>
+
+        <div class="pet-image">
+            <img src="imgs/huella.png" alt="Pet photo">
+        </div>
+
+        <div class="pet-details">
+            <div class="detail">
+                <span class="label">Name:</span>
+                <span class="value">Snoop Dogg</span>
+            </div>
+            <div class="detail">
+                <span class="label">Kind:</span>
+                <span class="value">Dog</span>
+            </div>
+            <div class="detail">
+                <span class="label">Weight:</span>
+                <span class="value">12 kg</span>
+            </div>
+            <div class="detail">
+                <span class="label">Age:</span>
+                <span class="value">3 years</span>
+            </div>
+            <div class="detail">
+                <span class="label">Breed:</span>
+                <span class="value">Galgo</span>
+            </div>
+            <div class="detail">
+                <span class="label">Location:</span>
+                <span class="value">Los Angeles</span>
+            </div>
+            <div class="detail">
+                <span class="label">Description:</span>
+                <span class="value">Un perrito que necesita rehabilitacion</span>
+            </div>
+        </div>
+    </main>
+
+    <script src="JS/layout.js"></script>
+</body>
+
+</html>

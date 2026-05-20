@@ -1,0 +1,220 @@
+{
+  "info": {
+    "name": "LaraAPI - Pet Management",
+    "description": "API for managing pets with authentication",
+    "version": "1.0.0",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login Admin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/login",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["api", "login"]
+            },
+            "description": "Inicia sesión como administrador\n\nCredenciales:\n- Email: admin@example.com\n- Password: password123\n\nDevuelve un token de 30 caracteres con rol 'administrador'"
+          }
+        },
+        {
+          "name": "Login Customer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"customer@example.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/login",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["api", "login"]
+            },
+            "description": "Inicia sesión como cliente\n\nCredenciales:\n- Email: customer@example.com\n- Password: password123\n\nDevuelve un token de 30 caracteres con rol 'customer'"
+          }
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/logout",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["api", "logout"]
+            },
+            "description": "Cierra sesión y destruye el token\n\nRequiere:\n- Authorization header con Bearer {{token}}\n\nResultado:\n- El token es destruido\n- Próximas llamadas requieren token válido"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pets",
+      "item": [
+        {
+          "name": "List All Pets",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/pets/list",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["api", "pets", "list"]
+            },
+            "description": "Obtiene la lista de todas las mascotas\n\nRequiere: Token válido en header Authorization"
+          }
+        },
+        {
+          "name": "Get Pet by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/pets/show/1",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["api", "pets", "show", "1"]
+            },
+            "description": "Obtiene los detalles de una mascota específica\n\nParámetro:\n- id (en URL): ID de la mascota\n\nRequiere: Token válido en header Authorization"
+          }
+        },
+        {
+          "name": "Create Pet (Admin Only)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Max\",\n  \"kind\": \"Perro\",\n  \"weight\": 25.5,\n  \"age\": 3,\n  \"breed\": \"Pastor Alemán\",\n  \"location\": \"Bogotá\",\n  \"description\": \"Perro activo y amigable\"\n}"
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/pets/store",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["api", "pets", "store"]
+            },
+            "description": "Crea una nueva mascota\n\nCampos requeridos:\n- name: nombre de la mascota\n- kind: tipo (Perro, Gato, etc.)\n- weight: peso en kg\n- age: edad en años\n- breed: raza\n- location: ubicación\n- description: descripción\n\nRequiere: Token válido en header Authorization"
+          }
+        },
+        {
+          "name": "Update Pet (Admin Only)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Max Updated\",\n  \"age\": 4,\n  \"status\": \"available\",\n  \"active\": true\n}"
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/pets/edit/1",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["api", "pets", "edit", "1"]
+            },
+            "description": "Actualiza los datos de una mascota\n\nParámetro:\n- id (en URL): ID de la mascota\n\nCampos opcionales:\n- name, kind, weight, age, breed, location, description, status, active\n\nRequiere: Token válido en header Authorization"
+          }
+        },
+        {
+          "name": "Delete Pet (Admin Only)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/pets/delete/1",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["api", "pets", "delete", "1"]
+            },
+            "description": "Elimina una mascota\n\nParámetro:\n- id (en URL): ID de la mascota\n\nRequiere: Token válido en header Authorization"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "token",
+      "value": "",
+      "type": "string",
+      "description": "Token de autenticación (se obtiene en Login)"
+    }
+  ]
+}
