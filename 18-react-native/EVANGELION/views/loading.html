@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NERV - Loading</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <div class="phone-container">
+        <div class="header">
+            <div class="nerv-title">
+                <div class="nerv-icon"></div>
+                <span class="nerv-title-text">NERV SYSTEMS</span>
+            </div>
+            <div class="cross"></div>
+        </div>
+
+        <main class="loading-content">
+            <div class="blackhole-loader">
+                <svg class="curve" viewBox="0 0 200 200">
+                    <defs>
+                        <path id="loading-circle" d="M 100,100 m -72,0 a 72,72 0 1,1 144,0 a 72,72 0 1,1 -144,0"></path>
+                    </defs>
+                    <text>
+                        <textPath href="#loading-circle">NERV SYSTEMS - ACCESS - </textPath>
+                    </text>
+                </svg>
+                <div class="blackhole">
+                    <div class="blackhole-disc"></div>
+                    <div class="blackhole-circle">
+                        <div class="loader-logo"></div>
+                    </div>
+                </div>
+            </div>
+            <p class="loading-title">SYNCING PILOT DATA</p>
+            <p class="loading-code">&lt;accessing...&gt;</p>
+        </main>
+
+        <div class="corner-effect corner-top-left"></div>
+        <div class="corner-effect corner-top-right"></div>
+        <div class="corner-effect corner-bottom-left"></div>
+        <div class="corner-effect corner-bottom-right"></div>
+        <div class="scanlines"></div>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const requestedView = params.get('next');
+        const allowedViews = ['login.html', 'dashboard.html', 'pilots.html', 'pilot-profile.html', 'pilot-edit.html', 'pilot-rei.html', 'pilot-asuka.html', 'pilot-kaworu.html', 'evas.html', 'eva-unit-01.html', 'angels.html', 'personnel.html'];
+        const nextView = allowedViews.includes(requestedView) ? requestedView : 'login.html';
+
+        window.setTimeout(() => {
+            window.location.href = nextView;
+        }, 1800);
+    </script>
+</body>
+</html>

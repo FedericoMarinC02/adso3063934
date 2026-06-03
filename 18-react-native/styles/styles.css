@@ -1,0 +1,28 @@
+/* - - - - - - - - - - - - - */
+/* R E A C T   N A T I V E */
+/* - - - - - - - - - - - - - */
+body {
+    background-attachment: fixed !important;
+    background-image: url('../imgs/bgeva.jpg') !important;
+    background-size: cover !important;
+}
+
+span {
+    border: 2px solid rgb(255, 60, 0) !important;
+}
+
+/* - - - - - - - - - - - - - */
+/* F I G M A   F R A M E S */
+/* - - - - - - - - - - - - - */
+.iframe-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.iframe-container iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 450px;
+    width: min(100%, 800px);
+}

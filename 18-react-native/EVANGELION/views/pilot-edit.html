@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NERV OS - Edit Pilot</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <div class="phone-container list-screen profile-screen edit-pilot-screen">
+        <header class="list-header">
+            <div class="nerv-title">
+                <div class="nerv-icon"></div>
+                <span class="nerv-title-text">NERV SYSTEMS</span>
+            </div>
+            <a class="cross" href="loading.html?next=pilots.html" aria-label="Volver a pilotos"></a>
+        </header>
+
+        <main class="list-content profile-content edit-pilot-content">
+            <p class="section-kicker">EDIT PILOT</p>
+            <h1>EDIT PILOT</h1>
+            <h2>&#12497;&#12452;&#12525;&#12483;&#12488;&#29256;&#32232;&#38598;</h2>
+
+            <form class="pilot-edit-form" action="loading.html" method="get">
+                <input type="hidden" name="next" value="pilot-profile.html">
+                <section class="edit-identity" aria-label="Identidad del piloto">
+                    <div class="photo-editor">
+                        <div class="photo-placeholder" aria-hidden="true">
+                            <span></span>
+                        </div>
+                        <label class="photo-upload">
+                            <span>UPDATE PHOTO</span>
+                            <input type="file" accept="image/*" aria-label="Actualizar foto del piloto">
+                        </label>
+                    </div>
+
+                    <div class="identity-fields">
+                        <label>
+                            <span>NAME</span>
+                            <input type="text" name="pilot-name" aria-label="Nombre del piloto">
+                        </label>
+                        <label>
+                            <span>N&deg; OF CHILD</span>
+                            <input type="text" name="child-number" aria-label="Numero de child">
+                        </label>
+                    </div>
+                </section>
+
+                <fieldset class="edit-data-panel">
+                    <legend>Personal Data</legend>
+                    <label><span>AGE</span><input type="text" name="age"></label>
+                    <label><span>BLOODY TYPE</span><input type="text" name="bloody-type"></label>
+                    <label><span>PILOT OF</span><input type="text" name="pilot-of"></label>
+                    <label><span>DATE OF BIRTH</span><input type="text" name="date-of-birth"></label>
+                    <label><span>ADDRES</span><input type="text" name="address"></label>
+                    <label><span>STATUS</span><input type="text" name="status"></label>
+                </fieldset>
+
+                <section class="edit-sync-panel" aria-label="Editar Eva sync rate">
+                    <div>
+                        <h3>EVA SYNC RATE</h3>
+                        <p>&#12456;&#12532;&#12449;&#12471;&#12531;&#12463;&#12525;&#29575;</p>
+                    </div>
+                    <input type="text" name="sync-rate" aria-label="Eva sync rate">
+                </section>
+
+                <button class="confirm-button" type="submit">CONFIRM</button>
+            </form>
+        </main>
+
+        <nav class="bottom-nav" aria-label="Main navigation">
+            <a href="loading.html?next=dashboard.html"><img src="../imgs/home.svg" alt=""><span>HOME</span></a>
+            <a class="active" href="loading.html?next=pilots.html"><img src="../imgs/pilots.svg" alt=""><span>PILOT</span></a>
+            <a href="loading.html?next=evas.html"><img src="../imgs/evas.svg" alt=""><span>EVAS</span></a>
+            <a href="loading.html?next=angels.html"><img src="../imgs/angels.svg" alt=""><span>ANGELS</span></a>
+            <a href="loading.html?next=personnel.html"><img src="../imgs/nerv%20personnel.svg" alt=""><span>NERV</span></a>
+        </nav>
+
+        <div class="corner-effect corner-top-left"></div>
+        <div class="corner-effect corner-top-right"></div>
+        <div class="corner-effect corner-bottom-left"></div>
+        <div class="corner-effect corner-bottom-right"></div>
+        <div class="scanlines"></div>
+    </div>
+</body>
+</html>

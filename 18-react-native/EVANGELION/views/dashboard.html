@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NERV OS - Dashboard</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <div class="phone-container dashboard-screen">
+        <header class="dashboard-hero">
+            <div class="dashboard-brand">
+                <img src="../imgs/NervLogo.png" alt="NERV" class="dashboard-logo">
+                <div>
+                    <h1>NERV OS</h1>
+                    <p>Dashboard</p>
+                </div>
+            </div>
+            <button class="icon-button" type="button" aria-label="Settings">
+                <span class="gear-icon"></span>
+            </button>
+        </header>
+
+        <main class="dashboard-content">
+            <section class="dashboard-panel status-panel">
+                <div class="panel-title">
+                    <span>Status</span>
+                    <i></i>
+                    <div class="mini-stripes" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+
+                <div class="active-status">
+                    <span class="status-dot"></span>
+                    <span class="active-wrapper" aria-label="Active">
+                        <span class="active-track" aria-hidden="true">
+                            <span>ACTIVE</span>
+                            <span>ACTIVE</span>
+                            <span>ACTIVE</span>
+                            <span>ACTIVE</span>
+                        </span>
+                    </span>
+                </div>
+
+                <div class="metrics-grid">
+                    <article>
+                        <span>Available Pilots</span>
+                        <strong>03</strong>
+                        <img src="../imgs/pilots.svg" alt="">
+                    </article>
+                    <article>
+                        <span>Operational EVAs</span>
+                        <strong>04</strong>
+                        <img src="../imgs/evas.svg" alt="">
+                    </article>
+                    <article>
+                        <span>Detected Angels</span>
+                        <strong>01</strong>
+                        <img src="../imgs/angels.svg" alt="">
+                    </article>
+                    <article>
+                        <span>Registered Personnel</span>
+                        <strong>18</strong>
+                        <img src="../imgs/nerv%20personnel.svg" alt="">
+                    </article>
+                </div>
+            </section>
+
+            <section class="dashboard-panel quick-panel">
+                <div class="panel-title">
+                    <span>Quick Access</span>
+                    <i></i>
+                    <div class="mini-stripes" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+
+                <nav class="quick-grid" aria-label="Quick access">
+                    <a href="loading.html?next=pilots.html">
+                        <img src="../imgs/pilots.svg" alt="">
+                        <span>Pilots<small>&#12497;&#12452;&#12525;&#12483;&#12488;</small></span>
+                        <b></b>
+                    </a>
+                    <a href="loading.html?next=evas.html">
+                        <img src="../imgs/evas.svg" alt="">
+                        <span>Evas<small>&#12456;&#12532;&#12449;</small></span>
+                        <b></b>
+                    </a>
+                    <a href="loading.html?next=angels.html">
+                        <img src="../imgs/angels.svg" alt="">
+                        <span>Angels<small>&#22825;&#20351;&#12383;&#12385;</small></span>
+                        <b></b>
+                    </a>
+                    <a href="loading.html?next=personnel.html">
+                        <img src="../imgs/nerv%20personnel.svg" alt="">
+                        <span>Nerv Personnel<small>&#31070;&#32076;&#32887;&#21729;</small></span>
+                        <b></b>
+                    </a>
+                </nav>
+            </section>
+
+            <section class="dashboard-panel feed-panel">
+                <div class="panel-title">
+                    <span>System Feed</span>
+                    <i></i>
+                    <div class="mini-stripes" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+
+                <ul class="system-feed">
+                    <li><span>Synchronization completed EVA-01</span><time>23:45</time></li>
+                    <li><span>Angel 03 detected in Tokyo-3 Sector</span><time>23:32</time></li>
+                    <li><span>MAGI Report Received</span><time>23:15</time></li>
+                </ul>
+            </section>
+        </main>
+
+        <nav class="bottom-nav" aria-label="Main navigation">
+            <a class="active" href="dashboard.html">
+                <img src="../imgs/home.svg" alt="">
+                <span>HOME</span>
+            </a>
+            <a href="loading.html?next=pilots.html">
+                <img src="../imgs/pilots.svg" alt="">
+                <span>PILOT</span>
+            </a>
+            <a href="loading.html?next=evas.html">
+                <img src="../imgs/evas.svg" alt="">
+                <span>EVAS</span>
+            </a>
+            <a href="loading.html?next=angels.html">
+                <img src="../imgs/angels.svg" alt="">
+                <span>ANGELS</span>
+            </a>
+            <a href="loading.html?next=personnel.html">
+                <img src="../imgs/nerv%20personnel.svg" alt="">
+                <span>NERV</span>
+            </a>
+        </nav>
+
+        <div class="corner-effect corner-top-left"></div>
+        <div class="corner-effect corner-top-right"></div>
+        <div class="corner-effect corner-bottom-left"></div>
+        <div class="corner-effect corner-bottom-right"></div>
+        <div class="scanlines"></div>
+    </div>
+</body>
+</html>

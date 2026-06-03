@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NERV - Login</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <div class="phone-container">
+        <div class="header">
+            <div class="nerv-title">
+                <div class="nerv-icon"></div>
+                <span class="nerv-title-text">NERV SYSTEMS</span>
+            </div>
+            <div class="cross"></div>
+        </div>
+
+        <main class="login-content">
+            <h1>NERV</h1>
+            <h2>WELCOME BACK, PILOT.</h2>
+            <p class="login-label">LOGIN &#12484;</p>
+
+            <form class="login-form" onsubmit="window.location.href='loading.html?next=dashboard.html'; return false;">
+                <label>
+                    <span>USERNAME</span>
+                    <input type="text" name="username" autocomplete="username">
+                </label>
+
+                <label>
+                    <span>PASSWORD</span>
+                    <input type="password" name="password" autocomplete="current-password">
+                </label>
+
+                <button class="login-button" type="submit">
+                    <span>LOGIN</span>
+                    <span>&#12525;&#12464;&#12452;&#12531;</span>
+                </button>
+
+                <a class="back-button" href="welcome.html">
+                    <span>BACK</span>
+                    <span>&#25147;&#12427;</span>
+                </a>
+            </form>
+        </main>
+
+        <div class="corner-effect corner-top-left"></div>
+        <div class="corner-effect corner-top-right"></div>
+        <div class="corner-effect corner-bottom-left"></div>
+        <div class="corner-effect corner-bottom-right"></div>
+        <div class="scanlines"></div>
+    </div>
+</body>
+</html>
